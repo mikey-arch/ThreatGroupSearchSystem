@@ -1,0 +1,58 @@
+[
+  {
+    "name": "APT1",
+    "aliases": ["Comment Crew", "PLA Unit 61398"],
+    "description": "Chinese military unit conducting cyber espionage operations primarily targeting intellectual property and sensitive information from various industries.",
+    "sourceOrigin": "MITRE ATT&CK",
+    "country": "China"
+  },
+  {
+    "name": "Lazarus Group",
+    "aliases": ["HIDDEN COBRA", "Guardians of Peace"],
+    "description": "North Korean state-sponsored group known for financial cybercrime and destructive attacks, including the Sony Pictures hack and WannaCry ransomware.",
+    "sourceOrigin": "MITRE ATT&CK",
+    "country": "North Korea"
+  },
+  {
+    "name": "Fancy Bear",
+    "aliases": ["APT28", "Sofacy", "Sednit"],
+    "description": "Russian military intelligence cyber unit targeting government, military, and security organizations worldwide.",
+    "sourceOrigin": "MITRE ATT&CK",
+    "country": "Russia"
+  },
+  {
+    "name": "Cozy Bear",
+    "aliases": ["APT29", "The Dukes"],
+    "description": "Russian intelligence group conducting long-term espionage operations against government and diplomatic targets.",
+    "sourceOrigin": "MITRE ATT&CK",
+    "country": "Russia"
+  },
+  {
+    "name": "Carbanak",
+    "aliases": ["FIN7"],
+    "description": "Financially motivated group targeting banks, payment processors, and hospitality companies worldwide.",
+    "sourceOrigin": "Crowdsource",
+    "country": "Unknown"
+  },
+  {
+    "name": "Equation Group",
+    "aliases": ["EQGRP"],
+    "description": "Highly sophisticated group with advanced zero-day exploits and custom malware frameworks.",
+    "sourceOrigin": "ETDA",
+    "country": "USA"
+  },
+  {
+    "name": "Turla",
+    "aliases": ["Snake", "Uroburos"],
+    "description": "Russian espionage group targeting government and diplomatic entities with advanced persistent threat techniques.",
+    "sourceOrigin": "MITRE ATT&CK",
+    "country": "Russia"
+  },
+  {
+    "name": "Winnti Group",
+    "aliases": ["APT41", "BARIUM"],
+    "description": "Chinese group conducting both financially motivated attacks and espionage operations.",
+    "sourceOrigin": "MITRE ATT&CK",
+    "country": "China"
+  }
+]
