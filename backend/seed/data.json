@@ -1,58 +1,236 @@
 [
   {
-    "name": "APT1",
-    "aliases": ["Comment Crew", "PLA Unit 61398"],
+    "canonicalName": "Lazarus Group",
+    "aliases": [
+      {
+        "name": "HIDDEN COBRA",
+        "source": "US Government"
+      },
+      {
+        "name": "Guardians of Peace",
+        "source": "Community"
+      },
+      {
+        "name": "ZINC",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE",
+        "id": "G0032"
+      }
+    ],
+    "tags": ["apt", "north korea", "financial crime", "destructive attacks", "ransomware"],
+    "description": "North Korean state-sponsored group known for financial cybercrime, destructive attacks, and espionage operations including the Sony Pictures hack, WannaCry ransomware, and numerous cryptocurrency thefts.",
+    "country": "North Korea",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["Andariel", "BlueNoroff"],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0032/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Responsible for WannaCry ransomware outbreak in 2017",
+        "author": "analyst_sarah",
+        "createdAt": "2024-01-15T10:30:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Andariel",
+    "aliases": [
+      {
+        "name": "Silent Chollima",
+        "source": "CrowdStrike"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE",
+        "id": "G0138"
+      }
+    ],
+    "tags": ["apt", "north korea", "healthcare", "south korea focused", "subgroup"],
+    "description": "North Korean subgroup of Lazarus Group that primarily targets South Korean organizations, particularly in healthcare, government, and financial sectors.",
+    "country": "North Korea",
+    "status": "active",
+    "parentNames": ["Lazarus Group"],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "AhnLab",
+        "url": "https://global.ahnlab.com/global/upload/download/asecreport/ASEC%20REPORT_vol.98_ENG.pdf",
+        "note": "Initial identification by South Korean security firm"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Focuses heavily on South Korean targets, especially healthcare during COVID-19",
+        "author": "analyst_kim",
+        "createdAt": "2024-01-18T09:15:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "BlueNoroff",
+    "aliases": [
+      {
+        "name": "APT38",
+        "source": "Mandiant"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE",
+        "id": "G0082"
+      }
+    ],
+    "tags": ["apt", "north korea", "financial crime", "swift", "cryptocurrency"],
+    "description": "North Korean subgroup of Lazarus Group specializing in financial institutions and cryptocurrency theft operations.",
+    "country": "North Korea",
+    "status": "active",
+    "parentNames": ["Lazarus Group"],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/the-bluenoroff-cryptocurrency-hunt-is-still-on/105488/",
+        "note": "Detailed analysis of cryptocurrency operations"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Estimated to have stolen over $2 billion in cryptocurrency since 2017",
+        "author": "analyst_mike",
+        "createdAt": "2024-01-20T14:45:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT1",
+    "aliases": [
+      {
+        "name": "Comment Crew",
+        "source": "Community"
+      },
+      {
+        "name": "PLA Unit 61398",
+        "source": "US Government"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE",
+        "id": "G0006"
+      },
+      {
+        "source": "Mandiant",
+        "id": "APT1"
+      }
+    ],
+    "tags": ["apt", "china", "cyber espionage", "intellectual property theft"],
     "description": "Chinese military unit conducting cyber espionage operations primarily targeting intellectual property and sensitive information from various industries.",
-    "sourceOrigin": "MITRE ATT&CK",
-    "country": "China"
+    "country": "China",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Mandiant APT1 Report",
+        "url": "https://www.mandiant.com/resources/apt1-exposing-one-of-chinas-cyber-espionage-units",
+        "note": "Groundbreaking 2013 report that first publicly attributed this group"
+      }
+    ],
+    "notes": [
+      {
+        "text": "First APT group to be publicly attributed to specific PLA unit",
+        "author": "analyst_john",
+        "createdAt": "2024-01-10T11:00:00Z"
+      }
+    ]
   },
   {
-    "name": "Lazarus Group",
-    "aliases": ["HIDDEN COBRA", "Guardians of Peace"],
-    "description": "North Korean state-sponsored group known for financial cybercrime and destructive attacks, including the Sony Pictures hack and WannaCry ransomware.",
-    "sourceOrigin": "MITRE ATT&CK",
-    "country": "North Korea"
-  },
-  {
-    "name": "Fancy Bear",
-    "aliases": ["APT28", "Sofacy", "Sednit"],
+    "canonicalName": "Fancy Bear",
+    "aliases": [
+      {
+        "name": "APT28",
+        "source": "Mandiant"
+      },
+      {
+        "name": "Sofacy",
+        "source": "Kaspersky"
+      },
+      {
+        "name": "Sednit",
+        "source": "ESET"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE",
+        "id": "G0007"
+      }
+    ],
+    "tags": ["apt", "russia", "gru", "government targets", "military"],
     "description": "Russian military intelligence cyber unit targeting government, military, and security organizations worldwide.",
-    "sourceOrigin": "MITRE ATT&CK",
-    "country": "Russia"
+    "country": "Russia",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0007/",
+        "note": "Comprehensive technical profile"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Attributed to Russian GRU Unit 26165",
+        "author": "analyst_alex",
+        "createdAt": "2024-01-12T13:20:00Z"
+      }
+    ]
   },
   {
-    "name": "Cozy Bear",
-    "aliases": ["APT29", "The Dukes"],
-    "description": "Russian intelligence group conducting long-term espionage operations against government and diplomatic targets.",
-    "sourceOrigin": "MITRE ATT&CK",
-    "country": "Russia"
-  },
-  {
-    "name": "Carbanak",
-    "aliases": ["FIN7"],
-    "description": "Financially motivated group targeting banks, payment processors, and hospitality companies worldwide.",
-    "sourceOrigin": "Crowdsource",
-    "country": "Unknown"
-  },
-  {
-    "name": "Equation Group",
-    "aliases": ["EQGRP"],
-    "description": "Highly sophisticated group with advanced zero-day exploits and custom malware frameworks.",
-    "sourceOrigin": "ETDA",
-    "country": "USA"
-  },
-  {
-    "name": "Turla",
-    "aliases": ["Snake", "Uroburos"],
-    "description": "Russian espionage group targeting government and diplomatic entities with advanced persistent threat techniques.",
-    "sourceOrigin": "MITRE ATT&CK",
-    "country": "Russia"
-  },
-  {
-    "name": "Winnti Group",
-    "aliases": ["APT41", "BARIUM"],
-    "description": "Chinese group conducting both financially motivated attacks and espionage operations.",
-    "sourceOrigin": "MITRE ATT&CK",
-    "country": "China"
+    "canonicalName": "FIN7",
+    "aliases": [
+      {
+        "name": "Carbanak Group",
+        "source": "Community"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE",
+        "id": "G0046"
+      }
+    ],
+    "tags": ["financially motivated", "hospitality", "retail", "point of sale"],
+    "description": "Financially motivated group targeting banks, payment processors, and hospitality companies worldwide. Often confused with separate Carbanak group.",
+    "country": "Unknown",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Mandiant",
+        "url": "https://www.mandiant.com/resources/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation",
+        "note": "Comprehensive analysis of FIN7 operations"
+      }
+    ],
+    "notes": [
+      {
+        "text": "NOT the same as Carbanak group despite name confusion",
+        "author": "analyst_sara",
+        "createdAt": "2024-01-16T11:45:00Z"
+      }
+    ]
   }
 ]
