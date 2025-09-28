@@ -1,11 +1,13 @@
 import ThreatGroup from "../models/ThreatGroup.ts"
 
-export async function getAllThreatGroups(req, res) {
+export async function getThreatGroupByCanonicalName(req, res) {
     try {
-        const threatgroups = await ThreatGroup.find().sort({createdAt:-1})
-        res.status(200).json(threatgroups)
+        const { canonicalName } = req.params;
+        const threatGroup = await ThreatGroup.findOne({ canonicalName });
+        if(!threatGroup) return res.status(404).json({ message:"Threat group not found"});
+        res.status(200).json(threatGroup);
     } catch (error) {
-        console.error("Error in getAllThreatGroups controller", error)
+        console.error("Error in getThreatGroupByCanonicalName controller", error)
         res.status(500).json({message:"Internal server error"})
     }
 }

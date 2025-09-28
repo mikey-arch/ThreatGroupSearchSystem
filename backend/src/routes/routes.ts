@@ -1,9 +1,9 @@
 import express from "express"
-import { getAllThreatGroups , getThreatGroupById} from "../controllers/controller.ts";
+import { getThreatGroupByCanonicalName , getThreatGroupById} from "../controllers/controller.ts";
 
 const router = express.Router();
 
-router.get("/", getAllThreatGroups); 
+router.get("/:canonicalName", getThreatGroupByCanonicalName); 
 router.get("/:id", getThreatGroupById); 
 
 export default router;
