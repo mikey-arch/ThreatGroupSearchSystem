@@ -13,15 +13,23 @@
       {
         "name": "ZINC",
         "source": "Microsoft"
+      },
+      {
+        "name": "NICKEL ACADEMY",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Diamond Sleet",
+        "source": "Microsoft"
       }
     ],
     "externalIds": [
       {
-        "source": "MITRE",
-        "id": "G0032"
+        "source": "MITRE ATT&CK",
+        "group_id": "G0032"
       }
     ],
-    "tags": ["apt", "north korea", "financial crime", "destructive attacks", "ransomware"],
+    "tags": ["apt", "north korea", "financial crime", "destructive attacks", "ransomware", "wannacry"],
     "description": "North Korean state-sponsored group known for financial cybercrime, destructive attacks, and espionage operations including the Sony Pictures hack, WannaCry ransomware, and numerous cryptocurrency thefts.",
     "country": "North Korea",
     "status": "active",
@@ -34,11 +42,41 @@
         "note": "Primary technical attribution source"
       }
     ],
+    "tools": [
+      {
+        "name": "WannaCry",
+        "software_id": "S0366",
+        "type": "ransomware",
+        "description": "WannaCry is a ransomware program that encrypts files on infected computers and asks users to pay ransom in Bitcoin to decrypt them. It spread through an exploit in Windows SMBv1 and caused massive disruption to businesses and critical infrastructure worldwide.",
+        "source": "https://www.kaspersky.com/resource-center/threats/ransomware-wannacry"
+      },
+      {
+        "name": "ThreatNeedle",
+        "software_id": "S0665",
+        "type": "backdoor",
+        "description": "ThreatNeedle is a backdoor that has been used by Lazarus Group since at least 2019 to target cryptocurrency, defense, and mobile gaming organizations. It is considered to be an advanced cluster of Lazarus Group's Manuscrypt (a.k.a. NukeSped) malware family.",
+        "source": "https://attack.mitre.org/software/S0665/"
+      },
+      {
+        "name": "Dtrack",
+        "software_id": "S0567",
+        "type": "spyware",
+        "description": "Dtrack is spyware that was discovered in 2019 and has been used against Indian financial institutions, research facilities, and the Kudankulam Nuclear Power Plant. Dtrack shares similarities with the DarkSeoul campaign, which was attributed to Lazarus Group.",
+        "source": "https://attack.mitre.org/software/S0567/"
+      },
+      {
+        "name": "RATANKBA",
+        "software_id": "S0241",
+        "type": "RAT",
+        "description": "RATANKBA is a remote controller tool used by Lazarus Group. RATANKBA has been used in attacks targeting financial institutions in Poland, Mexico, Uruguay, the United Kingdom, and Chile. It was also seen used against organizations related to telecommunications, management consulting, information technology, insurance, aviation, and education. RATANKBA has a graphical user interface to allow the attacker to issue jobs to perform on the infected machines.",
+        "source": "https://attack.mitre.org/software/S0241/"
+      }
+    ],
     "notes": [
       {
-        "text": "Responsible for WannaCry ransomware outbreak in 2017",
-        "author": "analyst_sarah",
-        "createdAt": "2024-01-15T10:30:00Z"
+        "text": "We named Lazarus the most active group of 2020",
+        "author": "Kaspersky ICS CERT",
+        "createdAt": "2021-02-25T12:00:00Z"
       }
     ]
   },
@@ -48,12 +86,20 @@
       {
         "name": "Silent Chollima",
         "source": "CrowdStrike"
+      },
+      {
+        "name": "PLUTONIUM",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Onyx Sleet",
+        "source": "Microsoft"
       }
     ],
     "externalIds": [
       {
-        "source": "MITRE",
-        "id": "G0138"
+        "source": "MITRE ATT&CK",
+        "group_id": "G0138"
       }
     ],
     "tags": ["apt", "north korea", "healthcare", "south korea focused", "subgroup"],
@@ -69,11 +115,27 @@
         "note": "Initial identification by South Korean security firm"
       }
     ],
+    "tools": [
+      {
+        "name": "gh0st RAT",
+        "software_id": "S0032",
+        "type": "RAT",
+        "description": "Gh0st RAT (Remote Access Terminal) is a trojan “Remote Access Tool” used on Windows platforms, and has been used to hack into some of the most sensitive computer networks on Earth.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.ghost_rat"
+      },
+      {
+        "name": "gh0st RAT",
+        "software_id": "S0433",
+        "type": "RAT",
+        "description": "Rifdoor is a remote access trojan (RAT) that shares numerous code similarities with HotCroissant.",
+        "source": "https://attack.mitre.org/software/S0433/"
+      }
+    ],
     "notes": [
       {
-        "text": "Focuses heavily on South Korean targets, especially healthcare during COVID-19",
-        "author": "analyst_kim",
-        "createdAt": "2024-01-18T09:15:00Z"
+        "text": "Focuses heavily on South Korean government agencies, military organizations, and a variety of domestic companies",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-05T01:48:00Z"
       }
     ]
   },
@@ -88,7 +150,7 @@
     "externalIds": [
       {
         "source": "MITRE",
-        "id": "G0082"
+        "group_id": "G0082"
       }
     ],
     "tags": ["apt", "north korea", "financial crime", "swift", "cryptocurrency"],
@@ -104,11 +166,34 @@
         "note": "Detailed analysis of cryptocurrency operations"
       }
     ],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post‑exploitation tool that extracts plaintext credentials, password hashes, PINs and Kerberos tickets from Windows systems (LSASS memory, SAM, etc.), enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "DarkComet",
+        "software_id": "S0334",
+        "type": "malware",
+        "description": "DarkComet is a remote access tool (RAT) with features including remote shell, file transfer, keylogging, screen and video capture, and remote process control — commonly used to control compromised hosts and collect sensitive data.",
+        "source": "https://attack.mitre.org/software/S0334/"
+      },
+      {
+        "name": "Net (Windows)",
+        "software_id": "S0039",
+        "type": "tool",
+        "description": "The Net utility is a component of the Windows operating system. It is used in command-line operations for control of users, groups, services, and network connections. Net has a great deal of functionality, much of which is useful for an adversary, such as gathering system and network information for Discovery, moving laterally through SMB/Windows Admin Shares using net use commands, and interacting with services.",
+        "source": "https://attack.mitre.org/software/S0039/"
+      }
+    ],
     "notes": [
       {
-        "text": "Estimated to have stolen over $2 billion in cryptocurrency since 2017",
-        "author": "analyst_mike",
-        "createdAt": "2024-01-20T14:45:00Z"
+        "text": "Significant operations include the 2016 Bank of Bangladesh heist, during which APT38 stole $81 million, as well as attacks against Bancomext and Banco de Chile",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-05T01:51:00Z"
       }
     ]
   },
@@ -120,6 +205,10 @@
         "source": "Community"
       },
       {
+        "name": "Comment Panda",
+        "source": "CrowdStrike"
+      },
+      {
         "name": "PLA Unit 61398",
         "source": "US Government"
       }
@@ -127,11 +216,11 @@
     "externalIds": [
       {
         "source": "MITRE",
-        "id": "G0006"
+        "group_id": "G0006"
       },
       {
         "source": "Mandiant",
-        "id": "APT1"
+        "group_id": "APT1"
       }
     ],
     "tags": ["apt", "china", "cyber espionage", "intellectual property theft"],
@@ -147,11 +236,34 @@
         "note": "Groundbreaking 2013 report that first publicly attributed this group"
       }
     ],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post‑exploitation tool that extracts plaintext credentials, password hashes, PINs and Kerberos tickets from Windows systems (LSASS memory, SAM, etc.), enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "PoisonIvy",
+        "software_id": "S0012",
+        "type": "malware",
+        "description": "PoisonIvy is a remote access trojan (RAT) providing remote shell, file transfer, keylogging, screen capture, and persistence mechanisms; commonly used for interactive control and data exfiltration.",
+        "source": "https://attack.mitre.org/software/S0012/"
+      },
+      {
+        "name": "PsExec",
+        "software_id": "S0029",
+        "type": "tool",
+        "description": "PsExec is a Windows Sysinternals utility used to execute processes on remote systems. Adversaries use it for lateral movement, remote command execution, and service/agent deployment in compromised networks.",
+        "source": "https://attack.mitre.org/software/S0029/"
+      }
+    ],
     "notes": [
       {
         "text": "First APT group to be publicly attributed to specific PLA unit",
-        "author": "analyst_john",
-        "createdAt": "2024-01-10T11:00:00Z"
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-05T02:05:00Z"
       }
     ]
   },
@@ -174,11 +286,11 @@
     "externalIds": [
       {
         "source": "MITRE",
-        "id": "G0007"
+        "group_id": "G0007"
       }
     ],
     "tags": ["apt", "russia", "gru", "government targets", "military"],
-    "description": "Russian military intelligence cyber unit targeting government, military, and security organizations worldwide.",
+    "description": "Russian military intelligence cyber unit targeting government, military, and security organizations worldwide. This group has been active since at least 2004.",
     "country": "Russia",
     "status": "active",
     "parentNames": [],
@@ -190,11 +302,34 @@
         "note": "Comprehensive technical profile"
       }
     ],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post‑exploitation tool that extracts plaintext credentials, password hashes, PINs and Kerberos tickets from Windows systems (LSASS memory, SAM, etc.), enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "Responder",
+        "software_id": "S0174",
+        "type": "tool",
+        "description": "Responder is an open source tool used for LLMNR, NBT-NS and MDNS poisoning, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. ",
+        "source": "https://attack.mitre.org/software/S0174/"
+      },
+      {
+        "name": "certutil",
+        "software_id": "S0160",
+        "type": "tool",
+        "description": "CertUtil.exe is an admin command line tool intended by Microsoft to be used for manipulating certification authority (CA) data and components. This includes verifying certificates and certificate chains, dumping and displaying CA configuration information and configuring Certificate Services. Attackers can use certutil to replace PowerShell for specific tasks such as downloading a file from a remote URL and encoding and decoding a Base64 obfuscated payload.",
+        "source": "https://attack.mitre.org/software/S0160/"
+      }
+    ],
     "notes": [
       {
-        "text": "Attributed to Russian GRU Unit 26165",
-        "author": "analyst_alex",
-        "createdAt": "2024-01-12T13:20:00Z"
+        "text": "APT28 reportedly compromised the Hillary Clinton campaign, the Democratic National Committee, and the Democratic Congressional Campaign Committee in 2016 in an attempt to interfere with the U.S. presidential election.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-05T02:06:00Z"
       }
     ]
   },
@@ -202,14 +337,26 @@
     "canonicalName": "FIN7",
     "aliases": [
       {
-        "name": "Carbanak Group",
+        "name": "GOLD NIAGARA",
+        "source": "Secure WOrks"
+      },
+      {
+        "name": "Carbon Spider",
         "source": "Community"
+      },
+      {
+        "name": "ELBRUS",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Sangria Tempest",
+        "source": "Microsoft"
       }
     ],
     "externalIds": [
       {
         "source": "MITRE",
-        "id": "G0046"
+        "group_id": "G0046"
       }
     ],
     "tags": ["financially motivated", "hospitality", "retail", "point of sale"],
@@ -225,11 +372,34 @@
         "note": "Comprehensive analysis of FIN7 operations"
       }
     ],
+    "tools": [
+      {
+        "name": "AdFind",
+        "software_id": "S0552",
+        "type": "tool",
+        "description": "AdFind is a command-line Active Directory query tool that plays a significant role in the ransomware ecosystem, particularly in the reconnaissance phase of a ransomware attack chain. Originally designed for legitimate administrative purposes, AdFind is often leveraged by threat actors to gather critical information about an organization's Active Directory environment. This information is crucial for understanding the network topology, identifying high-value targets, and planning subsequent stages of the attack.",
+        "source": "https://www.halcyon.ai/faqs/what-is-adfind"
+      },
+      {
+        "name": "Cobalt Strike",
+        "software_id": "S0154",
+        "type": "malware",
+        "description": "Cobalt Strike is a commercial, full-featured, remote access tool that bills itself as 'adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors'. Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system.",
+        "source": "https://attack.mitre.org/software/S0154/"
+      },
+      {
+        "name": "Carbanak",
+        "software_id": "S0030",
+        "type": "malware",
+        "description": "Carbanak is a remote backdoor designed for espionage, data exfiltration, and to remote control.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.carbanak"
+      }
+    ],
     "notes": [
       {
-        "text": "NOT the same as Carbanak group despite name confusion",
-        "author": "analyst_sara",
-        "createdAt": "2024-01-16T11:45:00Z"
+        "text": "FIN7 may be linked to the Carbanak Group, but there appears to be several groups using Carbanak malware and are therefore tracked separately.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-05T02:16:00Z"
       }
     ]
   }
