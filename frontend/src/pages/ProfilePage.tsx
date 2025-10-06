@@ -166,6 +166,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import GraphTree from "../components/GraphTree";
+
 
 interface Alias {
   name: string;
@@ -241,9 +243,22 @@ const ProfilePage = () => {
 
   return (
     <div className="flex">
-      <Sidebar />
+      <div className="sticky top-0 h-screen">
+        <Sidebar />
+      </div>
       <main className="flex-1 p-8 max-w-5xl mx-auto" data-theme="nord">
-        <h1 className="text-3xl font-bold mb-6">{group.canonicalName}</h1>
+        <div className="sticky top-0 z-20 bg-white dark:bg-base-100 py-4 shadow-md">
+          <h1 className="text-3xl font-bold px-8">{group.canonicalName}</h1>
+        </div>
+        {group && (
+          <div className="mb-8">
+            <GraphTree
+              canonicalName={group.canonicalName}
+              parents={group.parentNames || []}
+              children={group.childNames || []}
+            />
+          </div>
+        )}
 
         {/* Aliases */}
         {group.aliases && group.aliases.length > 0 && (
