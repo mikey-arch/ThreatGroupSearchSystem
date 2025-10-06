@@ -17,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/mikey-arch/ThreatGroupSearchSystem/issues"
   },
-  "homepage": "https://github.com/mikey-arch/ThreatGroupSearchSystem#readme"
+  "homepage": "https://github.com/mikey-arch/ThreatGroupSearchSystem#readme",
+  "dependencies": {
+  "react": "18.2.0",
+  "react-dom": "18.2.0",
+  "react-router-dom": "6.22.3",
+  "react-hot-toast": "^2.6.0"
+},
+
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3"
+  }
 }

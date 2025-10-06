@@ -1,4 +1,6 @@
-import { Link } from "react-router";
+// import { Link } from "react-router";
+import { Link } from "react-router-dom";
+
 
 interface ThreatGroupCardProps {
   id: string;
@@ -7,6 +9,7 @@ interface ThreatGroupCardProps {
 }
 
 const ThreatGroupCard = ({ id, title, content}: ThreatGroupCardProps) => {
+  console.log("ThreatGroupCard id:", id); //debugging
   return (
     <Link to={`/profile/${id}`} className="block">
       <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all hover:scale-[1.01] cursor-pointer">
