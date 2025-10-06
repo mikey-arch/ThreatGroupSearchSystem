@@ -1,5 +1,15 @@
 import ThreatGroup from "../models/ThreatGroup.ts"
 
+export const getAllThreatGroups = async (req, res) => {
+    try {
+        const groups = await ThreatGroup.find();
+        res.json(groups);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
 // Search for matches in canonicalName or aliases
 export async function searchThreatGroups(req, res) {
     try {

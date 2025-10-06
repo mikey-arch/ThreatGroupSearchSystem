@@ -33,7 +33,7 @@ const HomePage = () => {
     }
   };
 
-  // 🆕 Fetch all groups on mount for the table
+  // Fetch all groups on mount for the table
   useEffect(() => {
     const fetchAllGroups = async () => {
       setLoadingAll(true);
@@ -82,8 +82,8 @@ const HomePage = () => {
             </div>
           )}
 
-          {/* 🆕 Full table of groups */}
-          <h2 className="text-2xl font-semibold mt-12 mb-4">All Threat Groups</h2>
+          {/* Full table of groups */}
+          <h2 className="text-2xl font-semibold mt-12 mb-4">Our Database</h2>
 
           {loadingAll ? (
             <div className="flex justify-center">
@@ -108,7 +108,7 @@ const HomePage = () => {
                           ? group.aliases.map((a) => a.name).join(", ")
                           : "—"}
                       </td>
-                      <td className="max-w-[500px] truncate">{group.description}</td>
+                      <td className="max-w-[500px]">{group.description}</td>
                     </tr>
                   ))}
                 </tbody>
