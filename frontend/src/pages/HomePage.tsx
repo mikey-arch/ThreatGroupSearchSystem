@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import Sidebar from "../components/Sidebar";
 import ThreatGroupCard from "../components/ThreatGroupCard";
+
 
 interface ThreatGroup {
   _id: string;
@@ -12,7 +13,9 @@ interface ThreatGroup {
 
 const HomePage = () => {
   const [threatGroups, setThreatGroups] = useState<ThreatGroup[]>([]);
+  const [allGroups, setAllGroups] = useState<ThreatGroup[]>([]); // 🆕 for full table
   const [loading, setLoading] = useState(false);
+  const [loadingAll, setLoadingAll] = useState(false); // 🆕 for table loading
 
   const handleSearch = async (query: string) => {
     if (!query.trim()) return;
@@ -30,6 +33,24 @@ const HomePage = () => {
     }
   };
 
+  // 🆕 Fetch all groups on mount for the table
+  useEffect(() => {
+    const fetchAllGroups = async () => {
+      setLoadingAll(true);
+      try {
+        const response = await fetch("/api/threatgroups");
+        const data = await response.json();
+        setAllGroups(data);
+      } catch (error) {
+        console.error("Error fetching all groups:", error);
+      } finally {
+        setLoadingAll(false);
+      }
+    };
+
+    fetchAllGroups();
+  }, []);
+
   return (
     <div className="flex">
       <Sidebar />
@@ -41,6 +62,7 @@ const HomePage = () => {
             <SearchBar onSearch={handleSearch} />
           </div>
 
+          {/* Search results */}
           {loading && (
             <div className="flex justify-center">
               <span className="loading loading-spinner loading-lg"></span>
@@ -60,6 +82,40 @@ const HomePage = () => {
             </div>
           )}
 
+          {/* 🆕 Full table of groups */}
+          <h2 className="text-2xl font-semibold mt-12 mb-4">All Threat Groups</h2>
+
+          {loadingAll ? (
+            <div className="flex justify-center">
+              <span className="loading loading-spinner loading-lg"></span>
+            </div>
+          ) : (
+            <div className="overflow-x-auto border rounded-lg">
+              <table className="table w-full">
+                <thead>
+                  <tr className="bg-base-200">
+                    <th>Name</th>
+                    <th>Aliases</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {allGroups.map((group) => (
+                    <tr key={group._id}>
+                      <td className="font-medium">{group.canonicalName}</td>
+                      <td>
+                        {group.aliases?.length
+                          ? group.aliases.map((a) => a.name).join(", ")
+                          : "—"}
+                      </td>
+                      <td className="max-w-[500px] truncate">{group.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          
         </div>
       </main>
     </div>

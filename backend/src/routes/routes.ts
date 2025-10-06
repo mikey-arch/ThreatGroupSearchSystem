@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/search", searchThreatGroups);
 router.get("/:canonicalName", getThreatGroupByCanonicalName);
-router.get("/:id", getThreatGroupById);
+router.get("/:group_id", getThreatGroupById);
 
 export default router;
 
