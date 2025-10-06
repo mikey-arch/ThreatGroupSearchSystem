@@ -1,5 +1,5 @@
 import express from "express"
-import { searchThreatGroups, getThreatGroupByCanonicalName , getThreatGroupById} from "../controllers/controller.ts";
+import { searchThreatGroups, getThreatGroupByCanonicalName, getThreatGroupById, getAllThreatGroups} from "../controllers/controller.ts";
 
 const router = express.Router();
 
@@ -10,6 +10,7 @@ const router = express.Router();
 router.get("/id/:id", getThreatGroupById);
 router.get("/search", searchThreatGroups);
 router.get("/:canonicalName", getThreatGroupByCanonicalName);
+router.get("/", getAllThreatGroups); // fetch all threat groups
 
 
 
