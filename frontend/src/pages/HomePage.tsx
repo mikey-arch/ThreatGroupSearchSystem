@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import Sidebar from "../components/Sidebar";
 import ThreatGroupCard from "../components/ThreatGroupCard";
@@ -12,10 +13,11 @@ interface ThreatGroup {
 }
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [threatGroups, setThreatGroups] = useState<ThreatGroup[]>([]);
-  const [allGroups, setAllGroups] = useState<ThreatGroup[]>([]); // 🆕 for full table
+  const [allGroups, setAllGroups] = useState<ThreatGroup[]>([]);
   const [loading, setLoading] = useState(false);
-  const [loadingAll, setLoadingAll] = useState(false); // 🆕 for table loading
+  const [loadingAll, setLoadingAll] = useState(false);
 
   const handleSearch = async (query: string) => {
     if (!query.trim()) return;
@@ -101,8 +103,12 @@ const HomePage = () => {
                 </thead>
                 <tbody>
                   {allGroups.map((group) => (
-                    <tr key={group._id}>
-                      <td className="font-medium">{group.canonicalName}</td>
+                    <tr
+                      key={group._id}
+                      className="hover:bg-base-200 cursor-pointer"
+                      onClick={() => navigate(`/profile/${group._id}`)}
+                    >
+                      <td className="font-medium text-blue-600">{group.canonicalName}</td>
                       <td>
                         {group.aliases?.length
                           ? group.aliases.map((a) => a.name).join(", ")

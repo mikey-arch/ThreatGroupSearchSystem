@@ -164,7 +164,7 @@
 
 // export default ProfilePage;
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import GraphTree from "../components/GraphTree";
 
@@ -216,8 +216,21 @@ interface ThreatGroup {
 
 const ProfilePage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [group, setGroup] = useState<ThreatGroup | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const navigateToGroup = async (canonicalName: string) => {
+    try {
+      const response = await fetch(`/api/threatgroups/${encodeURIComponent(canonicalName)}`);
+      const data = await response.json();
+      if (data._id) {
+        navigate(`/profile/${data._id}`);
+      }
+    } catch (error) {
+      console.error('Failed to fetch threat group:', error);
+    }
+  };
 
   useEffect(() => {
     if (!id) return;
@@ -322,7 +335,14 @@ const ProfilePage = () => {
                 <h2 className="text-xl font-semibold mb-1">Parent Groups</h2>
                 <ul className="list-disc list-inside mb-3">
                   {group.parentNames.map((parent, idx) => (
-                    <li key={idx}>{parent}</li>
+                    <li key={idx}>
+                      <span
+                        className="text-blue-600 cursor-pointer hover:underline"
+                        onClick={() => navigateToGroup(parent)}
+                      >
+                        {parent}
+                      </span>
+                    </li>
                   ))}
                 </ul>
               </>
@@ -332,7 +352,14 @@ const ProfilePage = () => {
                 <h2 className="text-xl font-semibold mb-1">Child Groups</h2>
                 <ul className="list-disc list-inside">
                   {group.childNames.map((child, idx) => (
-                    <li key={idx}>{child}</li>
+                    <li key={idx}>
+                      <span
+                        className="text-blue-600 cursor-pointer hover:underline"
+                        onClick={() => navigateToGroup(child)}
+                      >
+                        {child}
+                      </span>
+                    </li>
                   ))}
                 </ul>
               </>
