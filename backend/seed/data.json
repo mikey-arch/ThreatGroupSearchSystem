@@ -724,7 +724,7 @@
     "aliases": [
       {
         "name": "Elfin",
-        "source": "Broadcom"
+        "source": "FireEye"
       },
       {
         "name": "HOLMIUM",
@@ -863,6 +863,75 @@
         "text": "APT34 has used LaZagne, CertUtil, and Mimikatz to maintain access and extract credentials from government and energy sector targets across the Middle East.",
         "author": "Analyst Águeda Alemany",
         "createdAt": "2025-10-07T07:05:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "MuddyWater",
+    "aliases": [
+      {
+        "name": "Static Kitten",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Seedworm",
+        "source": "Symantec"
+      },
+      {
+        "name": "TEMP.Zagros",
+        "source": "FireEye"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0069"
+      }
+    ],
+    "tags": [ "apt", "iran", "espionage", "government", "telecom", "education", "middle east", "powershell", "dns tunneling" ],
+    "description": "MuddyWater is an Iranian state-sponsored cyber espionage group active since at least 2017. It has targeted government, telecommunications, and private organisations across the Middle East, Europe, North America, and Asia, using PowerShell-based backdoors, DNS tunneling, and credential theft.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0069/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "CISA",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-055a",
+        "note": "Joint advisory on MuddyWater operations and toolset"
+      },
+      {
+        "source": "Group-IB",
+        "url": "https://www.group-ib.com/blog/muddywater-infrastructure-malware/",
+        "note": "Infrastructure and malware analysis of MuddyWater operations"
+      }
+    ],
+    "tools": [
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      },
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "MuddyWater has used PowerShell-based backdoors, DNS tunneling, and credential theft tools like Mimikatz to compromise government and telecom targets across the Middle East, North America, Asia, and Europe.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-08T08:27:00Z"
       }
     ]
   }
