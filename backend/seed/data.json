@@ -648,4 +648,75 @@
       }
     ]
   },
+  {
+    "canonicalName": "Patchwork",
+    "aliases": [
+      {
+        "name": "Dropping Elephant",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "Hangover Group",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "MONSOON",
+        "source": "MITRE ATT&CK"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0040"
+      }
+    ],
+    "tags": [ "apt", "india", "espionage", "government", "think tanks", "spear-phishing", "south asia" ],
+    "description": "Patchwork is a suspected Indian cyber espionage group active since at least 2015. It has targeted diplomatic, government, and think tank organisations across South and Southeast Asia, often using spear-phishing and custom malware loaders.",
+    "country": "India",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0040/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Patchwork%2C%20Dropping%20Elephant",
+        "note": "Targeting and malware usage overview"
+      }
+    ],
+    "tools": [
+      {
+        "name": "PowerSploit",
+        "software_id": "S0194",
+        "type": "tool",
+        "description": "PowerSploit is a modular post-exploitation framework written in PowerShell. It includes scripts for code execution, credential theft, and reconnaissance.",
+        "source": "https://attack.mitre.org/software/S0194/"
+      },
+      {
+        "name": "QuasarRAT",
+        "software_id": "S0262",
+        "type": "malware",
+        "description": "QuasarRAT is a remote access trojan written in .NET that provides keylogging, screen capture, file manipulation, and remote command execution. It is commonly used by threat actors for surveillance and data exfiltration.",
+        "source": "https://attack.mitre.org/software/S0262/"
+      },
+      {
+        "name": "AutoIt",
+        "software_id": null,
+        "type": "tool",
+        "description": "AutoIt is a scripting language designed for automating the Windows GUI and general scripting. It can be compiled into standalone executables and is used by threat actors to deliver and execute payloads.",
+        "source": "https://www.autoitscript.com/site/autoit/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Patchwork has used PowerSploit, QuasarRAT, and AutoIt-based backdoors in spear-phishing campaigns targeting diplomatic and government organisations across South Asia.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T05:12:00Z"
+      }
+    ]
+  },
 ]
