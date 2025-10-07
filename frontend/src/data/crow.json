@@ -1,0 +1,15 @@
+{
+  "name": "Cybersecurity Researchers of Waikato (CROW)",
+  "shortName": "CROW",
+  "description": "The Cyber Security Researchers of Waikato (CROW) aims to return control of data to data owners, by focusing on research addressing data security from a user-centric perspective. With the emergence of cloud computing technologies and prevalent mobile device usage, we are witnessing the diminishing effectiveness of traditional cyber security approaches such as perimeter defence, intrusion detection and infrastructure hardening. To address this, CROW focuses on six major themes: Provenance, User-Centricity, Visualisation, Economics, Hardware, and Tools and Datasets. Together, these six themes empower the return of control of data to users, thereby reducing reliance on third-party vendors or trust relationships commonly found in most cyber security contracts today.",
+  "website": "https://www.waikato.ac.nz/research/institutes-centres-entities/entities/cyber-security-research-group-crow/",
+  "focusAreas": [
+    "Applied Cryptography",
+    "Cyber Deception",
+    "Industrial IoT and CPS Security",
+    "Malware Analysis",
+    "Machine Learning for Cybersecurity",
+    "Routing Security",
+    "Internet Scanning and Network Assessment"
+  ]
+}
