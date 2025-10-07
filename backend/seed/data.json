@@ -533,7 +533,7 @@
       }
     ],
     "tags": [ "apt", "vietnam", "espionage", "southeast asia", "watering hole", "phishing" ],
-    "description": "APT32 is a Vietnam-based cyber espionage group active since at least 2014. It targets foreign governments, dissidents, journalists, and private sector organizations across Southeast Asia. Known for strategic web compromises, phishing, and custom malware.",
+    "description": "APT32 is a Vietnam-based cyber espionage group active since at least 2014. It targets foreign governments, dissidents, journalists, and private sector industries across Southeast Asia. Known for strategic web compromises, phishing, and custom malware.",
     "country": "Vietnam",
     "status": "active",
     "parentNames": [],
@@ -547,7 +547,12 @@
       {
         "source": "AttackIQ",
         "url": "https://www.attackiq.com/2024/04/16/emulating-oceanlotus/",
-        "note": "Behavioral emulation and threat modeling"
+        "note": "Behavioral emulation and threat modelling"
+      },
+      {
+        "source": "Obsidian Security",
+        "url": "https://www.obsidiansecurity.com/incident-watch/apt32-targets-dissidents-and-corporate-media-via-fake-site-espionage-campaign",
+        "note": "Targeting of corporate media and private sector"
       }
     ],
     "tools": [
@@ -569,7 +574,7 @@
         "name": "PowerShell",
         "software_id": "S0106",
         "type": "tool",
-        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "description": "PowerShell is a command-line shell and scripting language built into Windows. It enables system administration tasks such as file manipulation, process control, and remote execution. It is often leveraged by threat actors for in-memory execution and automation.",
         "source": "https://attack.mitre.org/software/S0106/"
       }
     ],
@@ -577,8 +582,8 @@
       {
         "text": "APT32 has used Cobalt Strike and Mimikatz during large-scale operations targeting Southeast Asian governments and private sector organizations.",
         "author": "Analyst Águeda Alemany",
-        "createdAt": "2025-10-07T17:20:00+13:00"
+        "createdAt": "2025-10-07T17:35:00Z"
       }
     ]
-  }
+  },
 ]
