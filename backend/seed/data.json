@@ -794,5 +794,76 @@
         "createdAt": "2025-10-07T06:45:00Z"
       }
     ]
+  },
+  {
+    "canonicalName": "APT34",
+    "aliases": [
+      {
+        "name": "OilRig",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "Helix Kitten",
+        "source": "FireEye"
+      },
+      {
+        "name": "Earth Simnavaz",
+        "source": "Trend Micro"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0049"
+      }
+    ],
+    "tags": [ "apt", "iran", "espionage", "middle east", "government", "telecom", "energy", "finance" ],
+    "description": "APT34 is a suspected Iranian state-sponsored cyber espionage group active since at least 2014. It has targeted government, energy, financial, and telecommunications organisations across the Middle East and beyond, using spear-phishing, credential theft, and custom web shells.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0049/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "Hunt & Hackett",
+        "url": "https://www.huntandhackett.com/threats/actors/apt34",
+        "note": "Toolset and targeting overview, including 2019 leaks"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "LaZagne",
+        "software_id": null,
+        "type": "tool",
+        "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
+        "source": "https://github.com/AlessandroZ/LaZagne"
+      },
+      {
+        "name": "CertUtil",
+        "software_id": "S0160",
+        "type": "tool",
+        "description": "CertUtil is a Windows command-line utility for managing certificates and certificate services. Threat actors use it to download remote payloads, encode and decode data, and bypass security controls.",
+        "source": "https://attack.mitre.org/software/S0160/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT34 has used LaZagne, CertUtil, and Mimikatz to maintain access and extract credentials from government and energy sector targets across the Middle East.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T07:05:00Z"
+      }
+    ]
   }
 ]
