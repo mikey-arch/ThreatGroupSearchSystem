@@ -10,18 +10,37 @@ export const getAllThreatGroups = async (req, res) => {
     }
 };
 
-// Search for matches in canonicalName or aliases
+// Search for matches in canonicalName, aliases, tags, country, externalIds, and description
 export async function searchThreatGroups(req, res) {
     try {
         const { query } = req.query;
         if (!query) return res.status(400).json({ message: "Search query is required" });
 
-        const threatGroups = await ThreatGroup.find({
+        // First, get canonical name matches
+        const canonicalMatches = await ThreatGroup.find({
+            canonicalName: { $regex: query, $options: 'i' }
+        })
+        .sort({ canonicalName: 1 })
+        .limit(20);
+
+        // Then get other matches (aliases, tags, etc.) excluding canonical name matches
+        const canonicalIds = canonicalMatches.map(g => g._id);
+        const otherMatches = await ThreatGroup.find({
+            _id: { $nin: canonicalIds },
             $or: [
-                { canonicalName: { $regex: query, $options: 'i' } },
-                { 'aliases.name': { $regex: query, $options: 'i' } }
+                { 'aliases.name': { $regex: query, $options: 'i' } },
+                { tags: { $regex: query, $options: 'i' } },
+                { country: { $regex: query, $options: 'i' } },
+                { 'externalIds.id': { $regex: query, $options: 'i' } },
+                { 'externalIds.group_id': { $regex: query, $options: 'i' } },
+                { description: { $regex: query, $options: 'i' } }
             ]
-        }).limit(20);
+        })
+        .sort({ canonicalName: 1 })
+        .limit(20 - canonicalMatches.length);
+
+        // Combine: canonical matches first, then others
+        const threatGroups = [...canonicalMatches, ...otherMatches];
 
         res.status(200).json(threatGroups);
     } catch (error) {

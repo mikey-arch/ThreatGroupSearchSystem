@@ -10,6 +10,8 @@ interface ThreatGroup {
   canonicalName: string;
   description: string;
   aliases?: Array<{ name: string; source?: string }>;
+  country?: string;
+  tags?: string[];
 }
 
 const HomePage = () => {
@@ -18,10 +20,12 @@ const HomePage = () => {
   const [allGroups, setAllGroups] = useState<ThreatGroup[]>([]);
   const [loading, setLoading] = useState(false);
   const [loadingAll, setLoadingAll] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = async (query: string) => {
     if (!query.trim()) return;
 
+    setSearchQuery(query);
     setLoading(true);
     try {
       const response = await fetch(`/api/threatgroups/search?query=${encodeURIComponent(query)}`);
@@ -72,13 +76,17 @@ const HomePage = () => {
           )}
 
           {!loading && threatGroups.length > 0 && (
-            <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+            <div className="flex flex-col gap-1.5 max-w-4xl mx-auto">
               {threatGroups.map((group) => (
                 <ThreatGroupCard
                   key={group._id}
                   id={group._id}
                   title={group.canonicalName}
                   content={group.description}
+                  country={group.country}
+                  aliases={group.aliases}
+                  tags={group.tags}
+                  searchQuery={searchQuery}
                 />
               ))}
             </div>
