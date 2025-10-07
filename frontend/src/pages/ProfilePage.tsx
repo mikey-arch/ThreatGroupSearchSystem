@@ -159,50 +159,50 @@ const ProfilePage = () => {
         )}
 
         {(group.parentNames?.length > 0 || group.childNames?.length > 0) && (
-  <section className="mb-8 bg-white dark:bg-base-100 rounded-lg p-6 shadow">
-    <GraphTree
-      canonicalName={group.canonicalName}
-      parents={group.parentNames || []}
-      children={group.childNames || []}
-    />
+        <section className="mb-8 bg-white dark:bg-base-100 rounded-lg p-6 shadow">
+          <GraphTree
+            canonicalName={group.canonicalName}
+            parents={group.parentNames || []}
+            children={group.childNames || []}
+          />
 
-    {group.parentNames?.length > 0 && (
-      <>
-        <h2 className="text-xl font-semibold mt-6 mb-2">Parent Groups</h2>
-        <ul className="list-disc list-inside">
-          {group.parentNames.map((parent, idx) => (
-            <li key={idx}>
-              <span
-                className="text-blue-600 cursor-pointer hover:underline"
-                onClick={() => navigateToGroup(parent)}
-              >
-                {parent}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </>
-    )}
+          {group.parentNames?.length > 0 && (
+            <>
+              <h2 className="text-xl font-semibold mt-6 mb-2">Parent Groups</h2>
+              <ul className="list-disc list-inside">
+                {group.parentNames.map((parent, idx) => (
+                  <li key={idx}>
+                    <span
+                      className="text-blue-600 cursor-pointer hover:underline"
+                      onClick={() => navigateToGroup(parent)}
+                    >
+                      {parent}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
-    {group.childNames?.length > 0 && (
-      <>
-        <h2 className="text-xl font-semibold mt-6 mb-2">Child Groups</h2>
-        <ul className="list-disc list-inside">
-          {group.childNames.map((child, idx) => (
-            <li key={idx}>
-              <span
-                className="text-blue-600 cursor-pointer hover:underline"
-                onClick={() => navigateToGroup(child)}
-              >
-                {child}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </>
-    )}
-  </section>
-)}
+          {group.childNames?.length > 0 && (
+            <>
+              <h2 className="text-xl font-semibold mt-6 mb-2">Child Groups</h2>
+              <ul className="list-disc list-inside">
+                {group.childNames.map((child, idx) => (
+                  <li key={idx}>
+                    <span
+                      className="text-blue-600 cursor-pointer hover:underline"
+                      onClick={() => navigateToGroup(child)}
+                    >
+                      {child}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+      )}
 
 
         {/* Tools Section */}

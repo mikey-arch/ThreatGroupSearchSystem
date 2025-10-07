@@ -1,9 +1,14 @@
-import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ReactFlow, { Background, Controls } from 'reactflow';
-import type { Node, Edge } from 'reactflow';
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import ReactFlow, {
+  Background,
+  Controls,
+  MarkerType,
+} from "reactflow";
 
-import 'reactflow/dist/style.css';
+import type { Node, Edge } from "reactflow";
+
+import "reactflow/dist/style.css";
 
 interface Props {
   canonicalName: string;
@@ -14,58 +19,107 @@ interface Props {
 const GraphTree: React.FC<Props> = ({ canonicalName, parents, children }) => {
   const navigate = useNavigate();
 
-  const handleNodeClick = useCallback(async (_event: React.MouseEvent, node: Node) => {
-    const groupName = node.data.label as string;
+  const handleNodeClick = useCallback(
+    async (_event: React.MouseEvent, node: Node) => {
+      const groupName = node.data.label as string;
+      if (groupName === canonicalName) return;
 
-    try {
-      // Fetch the threat group by canonical name to get its ID
-      const response = await fetch(`/api/threatgroups/${encodeURIComponent(groupName)}`);
-      const data = await response.json();
-
-      if (data._id) {
-        navigate(`/profile/${data._id}`);
+      try {
+        const response = await fetch(`/api/threatgroups/${encodeURIComponent(groupName)}`);
+        const data = await response.json();
+        if (data._id) {
+          navigate(`/profile/${data._id}`);
+        }
+      } catch (error) {
+        console.error("Failed to fetch threat group:", error);
       }
-    } catch (error) {
-      console.error('Failed to fetch threat group:', error);
-    }
-  }, [navigate]);
+    },
+    [navigate, canonicalName]
+  );
+
+  // Helpers to spread nodes horizontally
+  const horizontalSpacing = 200;
+  const verticalSpacing = 150;
+
+  const centerX = 0;
+
+  const parentNodes: Node[] = parents.map((parent, i) => ({
+    id: `parent-${i}`,
+    position: {
+      x: centerX + (i - (parents.length - 1) / 2) * horizontalSpacing,
+      y: -verticalSpacing,
+    },
+    data: { label: parent },
+    style: {
+      cursor: "pointer",
+      backgroundColor: "#fff",
+      border: "1px solid #ccc",
+      padding: 10,
+    },
+  }));
+
+  const childNodes: Node[] = children.map((child, i) => ({
+    id: `child-${i}`,
+    position: {
+      x: centerX + (i - (children.length - 1) / 2) * horizontalSpacing,
+      y: verticalSpacing,
+    },
+    data: { label: child },
+    style: {
+      cursor: "pointer",
+      backgroundColor: "#fff",
+      border: "1px solid #ccc",
+      padding: 10,
+    },
+  }));
 
   const nodes: Node[] = [
-    ...parents.map((p, i) => ({
-      id: `parent-${i}`,
-      position: { x: 0, y: -100 * (i + 1) },
-      data: { label: p },
-      style: { cursor: 'pointer' },
-    })),
+    ...parentNodes,
     {
-      id: 'main',
-      position: { x: 250, y: 0 },
+      id: "main",
+      position: { x: centerX, y: 0 },
       data: { label: canonicalName },
-      style: { cursor: 'default' },
+      style: {
+        backgroundColor: "#cce4ff",
+        border: "2px solid #007bff",
+        padding: 12,
+        fontWeight: "bold",
+      },
     },
-    ...children.map((c, i) => ({
-      id: `child-${i}`,
-      position: { x: 500, y: 100 * (i + 1) },
-      data: { label: c },
-      style: { cursor: 'pointer' },
-    })),
+    ...childNodes,
   ];
 
   const edges: Edge[] = [
     ...parents.map((_, i) => ({
       id: `e-parent-${i}`,
       source: `parent-${i}`,
-      target: 'main',
+      target: "main",
+      markerEnd: {
+        type: MarkerType.ArrowClosed,
+        color: "#555",
+      },
+      style: {
+        stroke: "#555",
+        strokeWidth: 2,
+      },
     })),
     ...children.map((_, i) => ({
       id: `e-child-${i}`,
-      source: 'main',
+      source: "main",
       target: `child-${i}`,
+      markerEnd: {
+        type: MarkerType.ArrowClosed,
+        color: "#555",
+      },
+      style: {
+        stroke: "#555",
+        strokeWidth: 2,
+      },
     })),
   ];
 
   return (
-    <div style={{ height: 400 }}>
+    <div style={{ height: 500 }}>
       <ReactFlow nodes={nodes} edges={edges} onNodeClick={handleNodeClick} fitView>
         <Background />
         <Controls />
