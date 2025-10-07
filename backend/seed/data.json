@@ -490,7 +490,7 @@
         "name": "PowerShell",
         "software_id": "S0106",
         "type": "tool",
-        "description": "PowerShell is a command-line shell and scripting language built into Windows. It enables system administration tasks such as file manipulation, process control, and remote execution. It is often leveraged by threat actors for in-memory execution and automation.",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
         "source": "https://attack.mitre.org/software/S0106/"
       }
     ],
@@ -574,7 +574,7 @@
         "name": "PowerShell",
         "software_id": "S0106",
         "type": "tool",
-        "description": "PowerShell is a command-line shell and scripting language built into Windows. It enables system administration tasks such as file manipulation, process control, and remote execution. It is often leveraged by threat actors for in-memory execution and automation.",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
         "source": "https://attack.mitre.org/software/S0106/"
       }
     ],
@@ -583,6 +583,68 @@
         "text": "APT32 has used Cobalt Strike and Mimikatz during large-scale operations targeting Southeast Asian governments and private sector organizations.",
         "author": "Analyst Águeda Alemany",
         "createdAt": "2025-10-07T17:35:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Sidewinder",
+    "aliases": [
+      {
+        "name": "Rattlesnake",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "T-APT-04",
+        "source": "MITRE ATT&CK"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0121"
+      }
+    ],
+    "tags": [ "apt", "india", "espionage", "military", "government", "south asia", "phishing" ],
+    "description": "Sidewinder is a cyber espionage group active since at least 2012, suspected to be Indian. It has targeted government, military, and business entities across South Asia, including Pakistan, China, Nepal, and Afghanistan. Known for spear-phishing, malware loaders, and registry-based persistence.",
+    "country": "India",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0121/",
+        "note": "Primary technical profile and campaign history"
+      }
+    ],
+    "tools": [
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      },
+      {
+        "name": "MSHTA",
+        "software_id": "S0440",
+        "type": "tool",
+        "description": "MSHTA is a Windows utility used to execute Microsoft HTML Applications (HTA). It can be leveraged by threat actors to run malicious scripts and bypass application control mechanisms.",
+        "source": "https://attack.mitre.org/software/S0440/"
+      },
+      {
+        "name": "JavaScript",
+        "software_id": null,
+        "type": "tool",
+        "description": "JavaScript is a scripting language commonly used in web environments to create interactive content and automate browser-side behaviour. Threat actors may use it to deliver malicious payloads, redirect users, or exploit vulnerabilities in client-side applications.",
+        "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Sidewinder has used PowerShell, MSHTA, and JavaScript to drop and execute malware loaders, often delivered via spear-phishing campaigns targeting South Asian government and military organisations.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T04:44:00Z"
       }
     ]
   },
