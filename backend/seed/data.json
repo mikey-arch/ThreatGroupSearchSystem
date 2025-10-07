@@ -403,4 +403,104 @@
       }
     ]
   }
+  {
+    "canonicalName": "Turla",
+    "aliases": [
+      {
+        "name": "Snake",
+        "source": "US Government"
+      },
+      {
+        "name": "Uroburos",
+        "source": "Community"
+      },
+      {
+        "name": "Waterbug",
+        "source": "Symantec"
+      },
+      {
+        "name": "WhiteBear",
+        "source": "Kaspersky"
+      },
+      {
+        "name": "Venomous Bear",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Group 88",
+        "source": "Community"
+      },
+      {
+        "name": "IRON HUNTER",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0010"
+      }
+    ],
+    "tags": [ "apt", "russia", "espionage", "government", "military", "waterhole", "backdoor" ],
+    "description": "Turla is a Russian state-sponsored cyber espionage group attributed to the FSB. Active since at least 2004, Turla has targeted government, military, educational, and research organizations across more than 50 countries. Known for sophisticated malware, watering hole attacks, and stealthy persistence mechanisms.",
+    "country": "Russia",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0010/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/the-epic-turla-operation/65545/",
+        "note": "Detailed analysis of Turla's Epic campaign"
+      },
+      {
+        "source": "CISA",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+        "note": "US government advisory on Snake malware"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Kazuar",
+        "software_id": "S0481",
+        "type": "backdoor",
+        "description": "Kazuar is a .NET-based backdoor that supports encrypted command-and-control communications, keylogging, remote shell access, and data exfiltration. It is designed for long-term espionage and stealthy persistence across Windows systems.",
+        "source": "https://attack.mitre.org/software/S0481/"
+      },
+      {
+        "name": "Snake",
+        "software_id": null,
+        "type": "backdoor",
+        "description": "Snake (also known as Uroburos) is a sophisticated rootkit and cyber espionage platform capable of covert data exfiltration, modular payload delivery, and long-term persistence. It supports multiple operating systems including Windows, Linux, and macOS.",
+        "source": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a"
+      },
+      {
+        "name": "Carbon",
+        "software_id": null,
+        "type": "backdoor",
+        "description": "Carbon is a second-stage backdoor designed for lateral movement and remote command execution. It communicates over HTTPS and includes features for system reconnaissance, payload delivery, and command scheduling.",
+        "source": "https://securelist.com/the-epic-turla-operation/65545/"
+      },
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a command-line shell and scripting language built into Windows. It enables system administration tasks such as file manipulation, process control, and remote execution. It is often leveraged by threat actors for in-memory execution and automation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Turla is known for using watering hole attacks and custom backdoors to compromise military and government targets across more than 50 countries.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T17:19:00Z"
+      }
+    ]
+  } 
+
 ]

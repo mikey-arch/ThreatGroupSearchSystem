@@ -188,3 +188,4 @@ dist-ssr
 *.sw?
 
 docs/*
+/.vs
