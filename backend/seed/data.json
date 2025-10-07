@@ -719,4 +719,80 @@
       }
     ]
   },
+  {
+    "canonicalName": "APT33",
+    "aliases": [
+      {
+        "name": "Elfin",
+        "source": "Broadcom"
+      },
+      {
+        "name": "HOLMIUM",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Peach Sandstorm",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0064"
+      }
+    ],
+    "tags": [ "apt", "iran", "espionage", "aerospace", "energy", "petrochemical", "phishing", "middle east" ],
+    "description": "APT33 is a suspected Iranian state-sponsored cyber espionage group active since at least 2013. It has targeted aerospace, energy, and petrochemical organisations in the United States, Saudi Arabia, and South Korea, using spear-phishing, credential theft, and publicly available tools.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0064/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "Google Cloud Threat Intelligence",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/apt33-insights-into-iranian-cyber-espionage",
+        "note": "Targeting and malware usage overview"
+      },
+      {
+        "source": "Forbes",
+        "url": "https://www.forbes.com/sites/emilsayegh/2023/03/28/inside-the-shadowy-world-of-iranian-cyber-espionage-group-apt33/",
+        "note": "Strategic targeting and operational tactics"
+      }
+    ],
+    "tools": [
+      {
+        "name": "LaZagne",
+        "software_id": null,
+        "type": "tool",
+        "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
+        "source": "https://github.com/AlessandroZ/LaZagne"
+      },
+      {
+        "name": "SniffPass",
+        "software_id": null,
+        "type": "tool",
+        "description": "SniffPass is a network traffic sniffer that captures plaintext passwords transmitted over protocols such as HTTP, FTP, SMTP, and POP3. It is used by threat actors to intercept credentials during active sessions.",
+        "source": "https://www.nirsoft.net/utils/password_sniffer.html"
+      },
+      {
+        "name": "DarkComet",
+        "software_id": "S0334",
+        "type": "malware",
+        "description": "DarkComet is a remote administration tool (RAT) with features including remote shell, file transfer, keylogging, screen and video capture, and remote process control — commonly used to control compromised hosts and collect sensitive data.",
+        "source": "https://attack.mitre.org/software/S0334/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT33 has used LaZagne, SniffPass, and DarkComet to collect credentials and maintain access to aerospace and petrochemical organisations in the United States, Saudi Arabia, and South Korea.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T06:45:00Z"
+      }
+    ]
+  }
 ]
