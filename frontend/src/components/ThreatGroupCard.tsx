@@ -61,7 +61,7 @@ const ThreatGroupCard = ({
           <div className="flex items-start gap-1.5 mb-0">
             <span className="text-lg">{flag}</span>
             <div className="flex-1">
-              <h2 className="card-title text-sm font-bold leading-tight mb-0">
+              <h2 className="text-sm font-bold leading-tight mb-0">
                 {highlightText(title, searchQuery)}
               </h2>
               {aliasNames && (
