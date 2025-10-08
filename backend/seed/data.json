@@ -402,5 +402,537 @@
         "createdAt": "2025-10-05T02:16:00Z"
       }
     ]
+  },
+  {
+    "canonicalName": "Turla",
+    "aliases": [
+      {
+        "name": "Snake",
+        "source": "US Government"
+      },
+      {
+        "name": "Uroburos",
+        "source": "Community"
+      },
+      {
+        "name": "Waterbug",
+        "source": "Symantec"
+      },
+      {
+        "name": "WhiteBear",
+        "source": "Kaspersky"
+      },
+      {
+        "name": "Venomous Bear",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Group 88",
+        "source": "Community"
+      },
+      {
+        "name": "IRON HUNTER",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0010"
+      }
+    ],
+    "tags": [ "apt", "russia", "espionage", "government", "military", "waterhole", "backdoor" ],
+    "description": "Turla is a Russian state-sponsored cyber espionage group attributed to the FSB. Active since at least 2004, Turla has targeted government, military, educational, and research organizations across more than 50 countries. Known for sophisticated malware, watering hole attacks, and stealthy persistence mechanisms.",
+    "country": "Russia",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0010/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/the-epic-turla-operation/65545/",
+        "note": "Detailed analysis of Turla's Epic campaign"
+      },
+      {
+        "source": "CISA",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+        "note": "US government advisory on Snake malware"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Kazuar",
+        "software_id": "S0481",
+        "type": "backdoor",
+        "description": "Kazuar is a .NET-based backdoor that supports encrypted command-and-control communications, keylogging, remote shell access, and data exfiltration. It is designed for long-term espionage and stealthy persistence across Windows systems.",
+        "source": "https://attack.mitre.org/software/S0481/"
+      },
+      {
+        "name": "Snake",
+        "software_id": null,
+        "type": "backdoor",
+        "description": "Snake (also known as Uroburos) is a sophisticated rootkit and cyber espionage platform capable of covert data exfiltration, modular payload delivery, and long-term persistence. It supports multiple operating systems including Windows, Linux, and macOS.",
+        "source": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a"
+      },
+      {
+        "name": "Carbon",
+        "software_id": null,
+        "type": "backdoor",
+        "description": "Carbon is a second-stage backdoor designed for lateral movement and remote command execution. It communicates over HTTPS and includes features for system reconnaissance, payload delivery, and command scheduling.",
+        "source": "https://securelist.com/the-epic-turla-operation/65545/"
+      },
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Turla is known for using watering hole attacks and custom backdoors to compromise military and government targets across more than 50 countries.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T17:19:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT32",
+    "aliases": [
+      {
+        "name": "OceanLotus",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "SeaLotus",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "Ocean Buffalo",
+        "source": "AttackIQ"
+      },
+      {
+        "name": "APT-C-00",
+        "source": "QiAnXin"
+      },
+      {
+        "name": "Canvas Cyclone",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0050"
+      }
+    ],
+    "tags": [ "apt", "vietnam", "espionage", "southeast asia", "watering hole", "phishing" ],
+    "description": "APT32 is a Vietnam-based cyber espionage group active since at least 2014. It targets foreign governments, dissidents, journalists, and private sector industries across Southeast Asia. Known for strategic web compromises, phishing, and custom malware.",
+    "country": "Vietnam",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0050/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "AttackIQ",
+        "url": "https://www.attackiq.com/2024/04/16/emulating-oceanlotus/",
+        "note": "Behavioral emulation and threat modelling"
+      },
+      {
+        "source": "Obsidian Security",
+        "url": "https://www.obsidiansecurity.com/incident-watch/apt32-targets-dissidents-and-corporate-media-via-fake-site-espionage-campaign",
+        "note": "Targeting of corporate media and private sector"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Cobalt Strike",
+        "software_id": "S0154",
+        "type": "malware",
+        "description": "Cobalt Strike is a commercial adversary simulation tool that provides post-exploitation capabilities including command execution, lateral movement, and beaconing.",
+        "source": "https://attack.mitre.org/software/S0154/"
+      },
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT32 has used Cobalt Strike and Mimikatz during large-scale operations targeting Southeast Asian governments and private sector organizations.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T17:35:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Sidewinder",
+    "aliases": [
+      {
+        "name": "Rattlesnake",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "T-APT-04",
+        "source": "MITRE ATT&CK"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0121"
+      }
+    ],
+    "tags": [ "apt", "india", "espionage", "military", "government", "south asia", "phishing" ],
+    "description": "Sidewinder is a cyber espionage group active since at least 2012, suspected to be Indian. It has targeted government, military, and business entities across South Asia, including Pakistan, China, Nepal, and Afghanistan. Known for spear-phishing, malware loaders, and registry-based persistence.",
+    "country": "India",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0121/",
+        "note": "Primary technical profile and campaign history"
+      }
+    ],
+    "tools": [
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      },
+      {
+        "name": "MSHTA",
+        "software_id": "S0440",
+        "type": "tool",
+        "description": "MSHTA is a Windows utility used to execute Microsoft HTML Applications (HTA). It can be leveraged by threat actors to run malicious scripts and bypass application control mechanisms.",
+        "source": "https://attack.mitre.org/software/S0440/"
+      },
+      {
+        "name": "JavaScript",
+        "software_id": null,
+        "type": "tool",
+        "description": "JavaScript is a scripting language commonly used in web environments to create interactive content and automate browser-side behaviour. Threat actors may use it to deliver malicious payloads, redirect users, or exploit vulnerabilities in client-side applications.",
+        "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Sidewinder has used PowerShell, MSHTA, and JavaScript to drop and execute malware loaders, often delivered via spear-phishing campaigns targeting South Asian government and military organisations.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T04:44:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Patchwork",
+    "aliases": [
+      {
+        "name": "Dropping Elephant",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "Hangover Group",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "MONSOON",
+        "source": "MITRE ATT&CK"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0040"
+      }
+    ],
+    "tags": [ "apt", "india", "espionage", "government", "think tanks", "spear-phishing", "south asia" ],
+    "description": "Patchwork is a suspected Indian cyber espionage group active since at least 2015. It has targeted diplomatic, government, and think tank organisations across South and Southeast Asia, often using spear-phishing and custom malware loaders.",
+    "country": "India",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0040/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Patchwork%2C%20Dropping%20Elephant",
+        "note": "Targeting and malware usage overview"
+      }
+    ],
+    "tools": [
+      {
+        "name": "PowerSploit",
+        "software_id": "S0194",
+        "type": "tool",
+        "description": "PowerSploit is a modular post-exploitation framework written in PowerShell. It includes scripts for code execution, credential theft, and reconnaissance.",
+        "source": "https://attack.mitre.org/software/S0194/"
+      },
+      {
+        "name": "QuasarRAT",
+        "software_id": "S0262",
+        "type": "malware",
+        "description": "QuasarRAT is a remote access trojan written in .NET that provides keylogging, screen capture, file manipulation, and remote command execution. It is commonly used by threat actors for surveillance and data exfiltration.",
+        "source": "https://attack.mitre.org/software/S0262/"
+      },
+      {
+        "name": "AutoIt",
+        "software_id": null,
+        "type": "tool",
+        "description": "AutoIt is a scripting language designed for automating the Windows GUI and general scripting. It can be compiled into standalone executables and is used by threat actors to deliver and execute payloads.",
+        "source": "https://www.autoitscript.com/site/autoit/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Patchwork has used PowerSploit, QuasarRAT, and AutoIt-based backdoors in spear-phishing campaigns targeting diplomatic and government organisations across South Asia.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T05:12:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT33",
+    "aliases": [
+      {
+        "name": "Elfin",
+        "source": "FireEye"
+      },
+      {
+        "name": "HOLMIUM",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Peach Sandstorm",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0064"
+      }
+    ],
+    "tags": [ "apt", "iran", "espionage", "aerospace", "energy", "petrochemical", "phishing", "middle east" ],
+    "description": "APT33 is a suspected Iranian state-sponsored cyber espionage group active since at least 2013. It has targeted aerospace, energy, and petrochemical organisations in the United States, Saudi Arabia, and South Korea, using spear-phishing, credential theft, and publicly available tools.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0064/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "Google Cloud Threat Intelligence",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/apt33-insights-into-iranian-cyber-espionage",
+        "note": "Targeting and malware usage overview"
+      },
+      {
+        "source": "Forbes",
+        "url": "https://www.forbes.com/sites/emilsayegh/2023/03/28/inside-the-shadowy-world-of-iranian-cyber-espionage-group-apt33/",
+        "note": "Strategic targeting and operational tactics"
+      }
+    ],
+    "tools": [
+      {
+        "name": "LaZagne",
+        "software_id": null,
+        "type": "tool",
+        "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
+        "source": "https://github.com/AlessandroZ/LaZagne"
+      },
+      {
+        "name": "SniffPass",
+        "software_id": null,
+        "type": "tool",
+        "description": "SniffPass is a network traffic sniffer that captures plaintext passwords transmitted over protocols such as HTTP, FTP, SMTP, and POP3. It is used by threat actors to intercept credentials during active sessions.",
+        "source": "https://www.nirsoft.net/utils/password_sniffer.html"
+      },
+      {
+        "name": "DarkComet",
+        "software_id": "S0334",
+        "type": "malware",
+        "description": "DarkComet is a remote administration tool (RAT) with features including remote shell, file transfer, keylogging, screen and video capture, and remote process control — commonly used to control compromised hosts and collect sensitive data.",
+        "source": "https://attack.mitre.org/software/S0334/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT33 has used LaZagne, SniffPass, and DarkComet to collect credentials and maintain access to aerospace and petrochemical organisations in the United States, Saudi Arabia, and South Korea.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T06:45:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT34",
+    "aliases": [
+      {
+        "name": "OilRig",
+        "source": "MITRE ATT&CK"
+      },
+      {
+        "name": "Helix Kitten",
+        "source": "FireEye"
+      },
+      {
+        "name": "Earth Simnavaz",
+        "source": "Trend Micro"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0049"
+      }
+    ],
+    "tags": [ "apt", "iran", "espionage", "middle east", "government", "telecom", "energy", "finance" ],
+    "description": "APT34 is a suspected Iranian state-sponsored cyber espionage group active since at least 2014. It has targeted government, energy, financial, and telecommunications organisations across the Middle East and beyond, using spear-phishing, credential theft, and custom web shells.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0049/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "Hunt & Hackett",
+        "url": "https://www.huntandhackett.com/threats/actors/apt34",
+        "note": "Toolset and targeting overview, including 2019 leaks"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "LaZagne",
+        "software_id": null,
+        "type": "tool",
+        "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
+        "source": "https://github.com/AlessandroZ/LaZagne"
+      },
+      {
+        "name": "CertUtil",
+        "software_id": "S0160",
+        "type": "tool",
+        "description": "CertUtil is a Windows command-line utility for managing certificates and certificate services. Threat actors use it to download remote payloads, encode and decode data, and bypass security controls.",
+        "source": "https://attack.mitre.org/software/S0160/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT34 has used LaZagne, CertUtil, and Mimikatz to maintain access and extract credentials from government and energy sector targets across the Middle East.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-07T07:05:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "MuddyWater",
+    "aliases": [
+      {
+        "name": "Static Kitten",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Seedworm",
+        "source": "Symantec"
+      },
+      {
+        "name": "TEMP.Zagros",
+        "source": "FireEye"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0069"
+      }
+    ],
+    "tags": [ "apt", "iran", "espionage", "government", "telecom", "education", "middle east", "powershell", "dns tunneling" ],
+    "description": "MuddyWater is an Iranian state-sponsored cyber espionage group active since at least 2017. It has targeted government, telecommunications, and private organisations across the Middle East, Europe, North America, and Asia, using PowerShell-based backdoors, DNS tunneling, and credential theft.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0069/",
+        "note": "Primary technical profile and campaign history"
+      },
+      {
+        "source": "CISA",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-055a",
+        "note": "Joint advisory on MuddyWater operations and toolset"
+      },
+      {
+        "source": "Group-IB",
+        "url": "https://www.group-ib.com/blog/muddywater-infrastructure-malware/",
+        "note": "Infrastructure and malware analysis of MuddyWater operations"
+      }
+    ],
+    "tools": [
+      {
+        "name": "PowerShell",
+        "software_id": "S0106",
+        "type": "tool",
+        "description": "PowerShell is a Windows command-line shell and scripting language used for system administration, automation, and remote execution. It is often leveraged by threat actors for in-memory execution and obfuscation.",
+        "source": "https://attack.mitre.org/software/S0106/"
+      },
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "MuddyWater has used PowerShell-based backdoors, DNS tunneling, and credential theft tools like Mimikatz to compromise government and telecom targets across the Middle East, North America, Asia, and Europe.",
+        "author": "Analyst Águeda Alemany",
+        "createdAt": "2025-10-08T08:27:00Z"
+      }
+    ]
   }
 ]
