@@ -110,7 +110,7 @@ const threatGroupSchema = new mongoose.Schema(
                     },
                     software_id: {
                         type: String,
-                        required: true,
+                        required: false,
                         trim: true,
                     },
                     type: {
