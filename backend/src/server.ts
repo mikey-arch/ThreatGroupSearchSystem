@@ -32,7 +32,9 @@ import routes from "./routes/routes.ts";
 import { connectDB } from "./config/db.ts";
 import dotenv from "dotenv";
 import rateLimiter from "./middleware/rateLimiter.ts";
-import cors from "cors"; // <- add this
+import cors from "cors"; 
+import webSearchRouter from "./routes/websearch.ts";
+
 
 dotenv.config();
 
@@ -42,8 +44,10 @@ const PORT = process.env.PORT || 5001;
 // middleware
 app.use(express.json());
 app.use(rateLimiter);
+app.use("/api", webSearchRouter);
 
-// ALLOW FRONTEND ORIGINS
+
+// ALLOW FRONTEND ORIGINS //review if this is needed 
 app.use(cors({
   origin: "http://localhost:5173", // your React dev server
 }));
