@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/crow-logo.png";
 
 const Sidebar = () => {
   return (
     <aside className="w-72 bg-base-200 min-h-screen p-6">
       {/* Header */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold tracking-wide">Threat Groups</h2>
+        <a
+          href="https://www.waikato.ac.nz/research/institutes-centres-entities/entities/cyber-security-research-group-crow/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center"
+        >
+          <img src={logo} alt="CROW Logo" className="h-32 w-auto" />
+        </a>
       </div>
 
       {/* Navigation */}
