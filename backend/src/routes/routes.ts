@@ -4,23 +4,6 @@ import ThreatGroup from "../models/ThreatGroup.ts";
 
 const router = express.Router();
 
-// router.get("/", getAllThreatGroups); 
-// router.get("/id/:id", getThreatGroupById);
-// router.get("/search", searchThreatGroups);
-// router.get("/:canonicalName", getThreatGroupByCanonicalName);
-
-
-// router.get("/countries", async (req, res) => {
-//   try {
-//     const countries = await ThreatGroup.distinct("country");
-//     const filtered = countries.filter(c => c);
-//     res.json(filtered.map(c => ({ country: c })));
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: "Failed to fetch countries" });
-//   }
-// });
-
 router.get("/", getAllThreatGroups); 
 router.get("/id/:id", getThreatGroupById);
 router.get("/search", searchThreatGroups);
