@@ -3,41 +3,50 @@ import fetch from "node-fetch";
 
 const router = express.Router();
 
-router.post("/websearch", async (req, res) => {
-  const { terms } = req.body;
-  if (!terms || !Array.isArray(terms) || terms.length === 0) {
-    return res.status(400).json({ error: "No search terms provided" });
+interface SerpAPIResponse {
+  organic_results?: {
+    title: string;
+    link: string;
+    snippet?: string;
+  }[];
+  error?: string;
+}
+
+router.get("/", async (req, res) => {
+  const { query } = req.query;
+
+  if (!query || typeof query !== "string") {
+    return res.status(400).json({ error: "No search query provided" });
   }
 
-  const API_KEY = process.env.GOOGLE_API_KEY;
-  const CSE_ID = process.env.GOOGLE_CSE_ID;
+  const API_KEY = process.env.SERPAPI_KEY;
+
+  if (!API_KEY) {
+    return res.status(500).json({ error: "SerpAPI key not configured" });
+  }
 
   try {
-    const results: any[] = [];
+    const url = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(query)}&api_key=${API_KEY}&num=10`;
+    console.log("Fetching SerpAPI:", url.replace(API_KEY, "***API_KEY***"));
 
-    // Fetch top 3 results per term
-    for (const term of terms) {
-      const response = await fetch(
-        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CSE_ID}&q=${encodeURIComponent(term)}`
-      );
-    //   const data = await response.json();
-    interface GoogleSearchResponse {
-    items?: {
-        title: string;
-        link: string;
-        snippet?: string;
-    }[];
+    const response = await fetch(url);
+    const data = (await response.json()) as SerpAPIResponse;
+
+    console.log("SerpAPI Response Status:", response.status);
+
+    if (!response.ok || data.error) {
+      console.error("SerpAPI Error:", data.error || data);
+      return res.status(500).json({ error: data.error || "SerpAPI error" });
     }
 
-    const data = (await response.json()) as GoogleSearchResponse;
+    // Convert SerpAPI format to frontend format
+    const items = data.organic_results?.map(result => ({
+      title: result.title,
+      link: result.link,
+      snippet: result.snippet
+    })) || [];
 
-
-      if (data.items) {
-        results.push(...data.items.slice(0, 3));
-      }
-    }
-
-    res.json({ results });
+    res.json({ items });
   } catch (err) {
     console.error("Web search failed:", err);
     res.status(500).json({ error: "Failed to fetch search results" });

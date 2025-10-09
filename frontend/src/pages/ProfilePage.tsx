@@ -713,7 +713,7 @@ const ProfilePage = () => {
     ];
 
     try {
-      const res = await fetch("/api/search?query=" + encodeURIComponent(terms.join(" ")));
+      const res = await fetch("/api/websearch?query=" + encodeURIComponent(terms.join(" ")));
       const data = await res.json();
       setWebResults(data.items || []); // items comes from Google Custom Search API
     } catch (err) {
@@ -767,7 +767,7 @@ const ProfilePage = () => {
           <>
             {group.description && <section className="mb-6"><h2 className="text-xl font-semibold mb-2">Description</h2><p>{group.description}</p></section>}
 
-            {group.aliases?.length > 0 && (
+            {group.aliases && group.aliases.length > 0 && (
               <section className="mb-6">
                 <h2 className="text-xl font-semibold mb-2">Aliases</h2>
                 <ul className="list-disc list-inside">
@@ -783,7 +783,7 @@ const ProfilePage = () => {
               </section>
             )}
 
-            {group.tags?.length > 0 && (
+            {group.tags && group.tags.length > 0 && (
               <section className="mb-6">
                 <h2 className="text-xl font-semibold mb-2">Tags</h2>
                 <div className="flex flex-wrap gap-2">
@@ -798,7 +798,7 @@ const ProfilePage = () => {
               <section className="mb-6 bg-white rounded-lg p-6 shadow">
                 <GraphTree canonicalName={group.canonicalName} parents={group.parentNames || []} children={group.childNames || []} />
 
-                {group.parentNames?.length > 0 && (
+                {group.parentNames && group.parentNames.length > 0 && (
                   <>
                     <h2 className="text-xl font-semibold mt-6 mb-2">Parent Groups</h2>
                     <ul className="list-disc list-inside">
@@ -807,7 +807,7 @@ const ProfilePage = () => {
                   </>
                 )}
 
-                {group.childNames?.length > 0 && (
+                {group.childNames && group.childNames.length > 0 && (
                   <>
                     <h2 className="text-xl font-semibold mt-6 mb-2">Child Groups</h2>
                     <ul className="list-disc list-inside">
@@ -818,7 +818,7 @@ const ProfilePage = () => {
               </section>
             )}
 
-            {group.tools?.length > 0 && (
+            {group.tools && group.tools.length > 0 && (
               <section className="mb-6 bg-white rounded-lg p-6 shadow">
                 <h2 className="text-2xl font-semibold mb-4">Tools</h2>
                 <ul className="space-y-4">
