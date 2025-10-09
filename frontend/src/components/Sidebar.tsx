@@ -82,6 +82,7 @@ const Sidebar = () => {
           </Link>
         </li>
 
+        <div className="divider"></div>
 
         {/* Map */}
         <li>
