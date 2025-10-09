@@ -76,19 +76,31 @@ const HomePage = () => {
           )}
 
           {!loading && threatGroups.length > 0 && (
-            <div className="flex flex-col gap-1.5 max-w-4xl mx-auto">
-              {threatGroups.map((group) => (
-                <ThreatGroupCard
-                  key={group._id}
-                  id={group._id}
-                  title={group.canonicalName}
-                  content={group.description}
-                  country={group.country}
-                  aliases={group.aliases}
-                  tags={group.tags}
-                  searchQuery={searchQuery}
-                />
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-semibold">Search Results ({threatGroups.length})</h2>
+                <button
+                  onClick={() => setThreatGroups([])}
+                  className="btn btn-sm btn-ghost"
+                  aria-label="Clear search results"
+                >
+                  ✕ Clear
+                </button>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                {threatGroups.map((group) => (
+                  <ThreatGroupCard
+                    key={group._id}
+                    id={group._id}
+                    title={group.canonicalName}
+                    content={group.description}
+                    country={group.country}
+                    aliases={group.aliases}
+                    tags={group.tags}
+                    searchQuery={searchQuery}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
