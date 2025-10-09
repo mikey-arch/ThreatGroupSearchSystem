@@ -33,7 +33,7 @@ import { connectDB } from "./config/db.ts";
 import dotenv from "dotenv";
 import rateLimiter from "./middleware/rateLimiter.ts";
 import cors from "cors"; 
-import webSearchRouter from "./routes/websearch.ts";
+import webSearchRoutes from "./routes/websearch.ts";
 
 
 dotenv.config();
@@ -44,7 +44,7 @@ const PORT = process.env.PORT || 5001;
 // middleware
 app.use(express.json());
 app.use(rateLimiter);
-app.use("/api", webSearchRouter);
+app.use("/api/websearch", webSearchRoutes);
 
 
 // ALLOW FRONTEND ORIGINS //review if this is needed 
