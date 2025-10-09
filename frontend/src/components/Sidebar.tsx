@@ -81,6 +81,30 @@ const Sidebar = () => {
             About CROW
           </Link>
         </li>
+
+
+        {/* Map */}
+        <li>
+          <Link to="/map" className="flex items-center gap-4 text-lg text-blue-600 hover:text-blue-700 transition">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="h-7 w-7"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 2C8.134 2 5 5.134 5 9c0 7 7 13 7 13s7-6 7-13c0-3.866-3.134-7-7-7z"
+              />
+              <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth={1.5} />
+            </svg>
+            Map
+          </Link>
+        </li>
+
       </ul>
     </aside>
   );
