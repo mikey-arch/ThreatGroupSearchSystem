@@ -1121,5 +1121,603 @@
     ],
     "tools": [],
     "notes": []
+  },
+  {
+    "canonicalName": "GOSSIPGIRL",
+    "aliases": [],
+    "externalIds": [],
+    "tags": ["collaboration", "umbrella group", "state-sponsored", "cyber warfare"],
+    "description": "Collaborative umbrella of various threat actors involved in Olympic Games / Stuxnet operations. Represents coordination between multiple advanced threat groups.",
+    "country": "Unknown",
+    "status": "unknown",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Chronicle Blog",
+        "url": "https://medium.com/chronicle-blog/who-is-gossipgirl-3b4170f846c0",
+        "note": "Analysis of GOSSIPGIRL coordination"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Flame",
+        "software_id": null,
+        "type": "malware",
+        "description": "Sophisticated cyber espionage malware used for targeted attacks and data collection.",
+        "source": "https://medium.com/chronicle-blog/who-is-gossipgirl-3b4170f846c0"
+      },
+      {
+        "name": "Stuxnet",
+        "software_id": null,
+        "type": "worm",
+        "description": "Advanced malware targeting industrial control systems.",
+        "source": "https://medium.com/chronicle-blog/who-is-gossipgirl-3b4170f846c0"
+      },
+      {
+        "name": "Miniflame",
+        "software_id": null,
+        "type": "malware",
+        "description": "Smaller variant of Flame malware.",
+        "source": "https://medium.com/chronicle-blog/who-is-gossipgirl-3b4170f846c0"
+      },
+      {
+        "name": "Duqu",
+        "software_id": null,
+        "type": "malware",
+        "description": "Information-stealing malware related to Stuxnet.",
+        "source": "https://medium.com/chronicle-blog/who-is-gossipgirl-3b4170f846c0"
+      },
+      {
+        "name": "Gauss",
+        "software_id": null,
+        "type": "malware",
+        "description": "Banking trojan targeting Middle Eastern financial systems.",
+        "source": "https://medium.com/chronicle-blog/who-is-gossipgirl-3b4170f846c0"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Equation Group",
+    "aliases": [
+      {
+        "name": "Tilded Team",
+        "source": "CrySyS"
+      },
+      {
+        "name": "EQGRP",
+        "source": "Shadow Brokers"
+      },
+      {
+        "name": "Platinum Colony",
+        "source": "SecureWorks"
+      },
+      {
+        "name": "APT-C-40",
+        "source": "Qihoo 360"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0020"
+      }
+    ],
+    "tags": ["usa", "nsa", "state-sponsored", "cyber espionage", "five eyes", "zero-day", "tailored access operations"],
+    "description": "Probably the most sophisticated computer attack group in the world, attributed to NSA's Tailored Access Operations (TAO) unit. Active since 2001. Kaspersky documented 500+ infections across 42+ countries (likely tens of thousands total). Uses virtual file systems, registry-based persistence, iPhone/Mac exploits, 300+ domains, 100+ servers for C&C. Capable of bridging air-gapped networks via USB. Bypasses code-signing with exploited signed drivers. Rivals Stuxnet/Flame in technical sophistication. Arsenal stolen by Shadow Brokers in 2016, leading to WannaCry and NotPetya outbreaks. Part of Five Eyes (NSA, GCHQ, CSIS, ASIS, GCSB).",
+    "country": "United States",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/",
+        "note": "Comprehensive analysis naming Equation Group"
+      },
+      {
+        "source": "Kaspersky - Regin",
+        "url": "http://securelist.com/blog/research/67741/regin-nation-state-ownage-of-gsm-networks/",
+        "note": "Analysis of Regin framework"
+      },
+      {
+        "source": "Symantec - Project Sauron",
+        "url": "http://www.symantec.com/connect/blogs/strider-cyberespionage-group-turns-eye-sauron-targets",
+        "note": "Project Sauron/Strider operations"
+      },
+      {
+        "source": "Kaspersky - Project Sauron",
+        "url": "https://securelist.com/analysis/publications/75533/faq-the-projectsauron-apt/",
+        "note": "Technical analysis of Project Sauron"
+      },
+      {
+        "source": "Bleeping Computer - Longhorn/CIA",
+        "url": "https://www.bleepingcomputer.com/news/security/longhorn-cyber-espionage-group-is-actually-the-cia/",
+        "note": "Attribution analysis"
+      },
+      {
+        "source": "Kaspersky - Gauss",
+        "url": "https://web.archive.org/web/20160304022846/http://www.kaspersky.com/about/news/virus/2012/Kaspersky_Lab_and_ITU_Discover_Gauss_A_New_Complex_Cyber_Threat_Designed_to_Monitor_Online_Banking_Accounts",
+        "note": "Gauss banking trojan discovery"
+      },
+      {
+        "source": "Kaspersky - DarkUniverse",
+        "url": "https://securelist.com/darkuniverse-the-mysterious-apt-framework-27/94897/",
+        "note": "DarkUniverse framework analysis"
+      },
+      {
+        "source": "Kaspersky - Operation Triangulation",
+        "url": "https://securelist.com/operation-triangulation/109842/",
+        "note": "iOS zero-day exploitation campaign"
+      },
+      {
+        "source": "Ars Technica",
+        "url": "https://arstechnica.com/information-technology/2015/02/how-omnipotent-hackers-tied-to-the-nsa-hid-for-14-years-and-were-found-at-last/",
+        "note": "Comprehensive analysis of 14 years of operations"
+      },
+      {
+        "source": "Kaspersky Q&A PDF",
+        "url": "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064459/Equation_group_questions_and_answers.pdf",
+        "note": "Detailed Q&A on Equation Group"
+      },
+      {
+        "source": "InverseCos - Inside Look",
+        "url": "https://www.inversecos.com/2025/02/an-inside-look-at-nsa-equation-group.html",
+        "note": "Inside look at NSA Equation Group operations"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Regin",
+        "software_id": null,
+        "type": "framework",
+        "description": "Highly sophisticated modular malware platform for long-term intelligence gathering and GSM network compromise.",
+        "source": "http://securelist.com/blog/research/67741/regin-nation-state-ownage-of-gsm-networks/"
+      },
+      {
+        "name": "EquationLaser",
+        "software_id": null,
+        "type": "malware",
+        "description": "Advanced persistent threat tool from the Equation Group arsenal.",
+        "source": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/"
+      },
+      {
+        "name": "EquationDrug",
+        "software_id": null,
+        "type": "malware",
+        "description": "Sophisticated malware platform with extensive modular capabilities.",
+        "source": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/"
+      },
+      {
+        "name": "DoubleFantasy",
+        "software_id": null,
+        "type": "malware",
+        "description": "Validator and intelligence gathering tool used in targeted operations.",
+        "source": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/"
+      },
+      {
+        "name": "TripleFantasy",
+        "software_id": null,
+        "type": "malware",
+        "description": "Advanced backdoor with extensive data collection capabilities.",
+        "source": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/"
+      },
+      {
+        "name": "Fanny",
+        "software_id": null,
+        "type": "worm",
+        "description": "USB worm used to bridge air-gapped networks, predates Stuxnet.",
+        "source": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/"
+      },
+      {
+        "name": "Grayfish",
+        "software_id": null,
+        "type": "bootkit",
+        "description": "Advanced bootkit capable of surviving OS reinstallation by infecting firmware.",
+        "source": "https://securelist.com/blog/research/68750/equation-the-death-star-of-malware-galaxy/"
+      },
+      {
+        "name": "DanderSpritz",
+        "software_id": null,
+        "type": "framework",
+        "description": "Post-exploitation framework leaked by Shadow Brokers.",
+        "source": "https://en.wikipedia.org/wiki/Equation_Group"
+      },
+      {
+        "name": "DoublePulsar",
+        "software_id": null,
+        "type": "backdoor",
+        "description": "Kernel-mode backdoor implant leaked by Shadow Brokers, used in WannaCry.",
+        "source": "https://en.wikipedia.org/wiki/Equation_Group"
+      },
+      {
+        "name": "ETERNALBLUE",
+        "software_id": null,
+        "type": "exploit",
+        "description": "SMB exploit leaked by Shadow Brokers, used in WannaCry and NotPetya ransomware.",
+        "source": "https://en.wikipedia.org/wiki/Equation_Group"
+      },
+      {
+        "name": "ETERNALROMANCE",
+        "software_id": null,
+        "type": "exploit",
+        "description": "SMB exploit leaked by Shadow Brokers.",
+        "source": "https://en.wikipedia.org/wiki/Equation_Group"
+      },
+      {
+        "name": "Bvp47",
+        "software_id": null,
+        "type": "backdoor",
+        "description": "Top-tier backdoor used by Equation Group for long-term access.",
+        "source": "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064459/Equation_group_questions_and_answers.pdf"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Lamberts",
+    "aliases": [
+      {
+        "name": "Longhorn",
+        "source": "Symantec"
+      },
+      {
+        "name": "APT-C-39",
+        "source": "Qihoo 360"
+      },
+      {
+        "name": "Platinum Terminal",
+        "source": "SecureWorks"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["usa", "cia", "state-sponsored", "cyber espionage", "vault 7"],
+    "description": "CIA subgroup active since at least 2009. Exposed through Vault 7/8 WikiLeaks. Has infected 40 targets in 16+ countries across Middle East, Europe, Asia, and Africa. Uses sophisticated espionage malware with high operational security - detailed fingerprinting, discovery, and exfiltration capabilities. Communicates with C&C over HTTPS using custom cryptography, per-target domain/IP configurations, and randomized intervals to evade detection. Targets aerospace, telecoms, energy, financial, government, and IT sectors.",
+    "country": "United States",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Symantec",
+        "url": "https://www.symantec.com/connect/blogs/longhorn-tools-used-cyberespionage-group-linked-vault-7",
+        "note": "Longhorn tools linked to Vault 7"
+      },
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/",
+        "note": "Comprehensive analysis of Lamberts toolkit"
+      },
+      {
+        "source": "Qihoo 360",
+        "url": "http://blogs.360.cn/post/APT-C-39_CIA_EN.html",
+        "note": "Chinese security firm attribution to CIA"
+      },
+      {
+        "source": "GitHub - Digital Weapon Archive",
+        "url": "https://github.com/RedDrip7/APT_Digital_Weapon/tree/master/Lamberts",
+        "note": "Archive of Lambert family tools"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Black Lambert",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Lambert malware family.",
+        "source": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/"
+      },
+      {
+        "name": "Blue Lambert",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Lambert malware family.",
+        "source": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/"
+      },
+      {
+        "name": "Gray Lambert",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Lambert malware family.",
+        "source": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/"
+      },
+      {
+        "name": "Green Lambert",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Lambert malware family.",
+        "source": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/"
+      },
+      {
+        "name": "Pink Lambert",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Lambert malware family.",
+        "source": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/"
+      },
+      {
+        "name": "White Lambert",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Lambert malware family.",
+        "source": "https://securelist.com/unraveling-the-lamberts-toolkit/77990/"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Snowglobe",
+    "aliases": [
+      {
+        "name": "Animal Farm",
+        "source": "Kaspersky"
+      },
+      {
+        "name": "SIG20",
+        "source": "NSA"
+      },
+      {
+        "name": "ATK 8",
+        "source": "Thales"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["france", "state-sponsored", "cyber espionage", "cno"],
+    "description": "French intelligence agency cyber espionage operation discovered by CSEC in 2009. Active since at least 2011. CSEC assesses with moderate certainty this is a state-sponsored CNO (Cyber Network Operation) effort by French intelligence. Consists of three implants: two 'snowballs' and one sophisticated 'snowman' discovered in mid-2010. Known for Animal Farm suite of malware with animal-themed names. Targets government, defense, media, and diplomatic entities across Europe, Middle East, Africa, and Asia.",
+    "country": "France",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/blog/research/69114/animals-in-the-apt-farm/",
+        "note": "Analysis of Animal Farm malware suite"
+      },
+      {
+        "source": "Motherboard",
+        "url": "https://motherboard.vice.com/read/meet-babar-a-new-malware-almost-certainly-created-by-france",
+        "note": "Attribution to French intelligence"
+      },
+      {
+        "source": "Cyphort - EvilBunny",
+        "url": "http://www.cyphort.com/evilbunny-malware-instrumented-lua/",
+        "note": "Technical analysis of Bunny malware"
+      },
+      {
+        "source": "Cyphort - Babar",
+        "url": "http://www.cyphort.com/babar-suspected-nation-state-spyware-spotlight/",
+        "note": "Babar spyware analysis"
+      },
+      {
+        "source": "G DATA",
+        "url": "https://blog.gdatasoftware.com/blog/article/babar-espionage-software-finally-found-and-put-under-the-microscope.html",
+        "note": "Detailed Babar malware analysis"
+      },
+      {
+        "source": "G DATA - Operation Snowglobe",
+        "url": "https://www.gdatasoftware.com/blog/2015/02/24270-babar-espionage-software-finally-found-and-put-under-the-microscope",
+        "note": "CSEC documents on Operation Snowglobe"
+      },
+      {
+        "source": "Infosec Institute",
+        "url": "https://resources.infosecinstitute.com/animal-farm-apt-and-the-shadow-of-france-intelligence/",
+        "note": "Animal Farm APT and French intelligence attribution"
+      },
+      {
+        "source": "ESET - Dino Analysis",
+        "url": "https://www.welivesecurity.com/2015/06/30/dino-spying-malware-analyzed/",
+        "note": "Technical analysis of Dino spying malware"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Babar",
+        "software_id": null,
+        "type": "spyware",
+        "description": "Sophisticated espionage malware with extensive data collection capabilities.",
+        "source": "https://motherboard.vice.com/read/meet-babar-a-new-malware-almost-certainly-created-by-france"
+      },
+      {
+        "name": "Bunny",
+        "software_id": null,
+        "type": "malware",
+        "description": "Lua-instrumented malware component of Animal Farm suite.",
+        "source": "http://www.cyphort.com/evilbunny-malware-instrumented-lua/"
+      },
+      {
+        "name": "Dino",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Animal Farm malware suite.",
+        "source": "https://securelist.com/blog/research/69114/animals-in-the-apt-farm/"
+      },
+      {
+        "name": "Casper",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Animal Farm malware suite.",
+        "source": "https://securelist.com/blog/research/69114/animals-in-the-apt-farm/"
+      },
+      {
+        "name": "Tafacalou",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Animal Farm malware suite.",
+        "source": "https://securelist.com/blog/research/69114/animals-in-the-apt-farm/"
+      },
+      {
+        "name": "NBot",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Animal Farm malware suite.",
+        "source": "https://securelist.com/blog/research/69114/animals-in-the-apt-farm/"
+      },
+      {
+        "name": "Chocopop",
+        "software_id": null,
+        "type": "malware",
+        "description": "Component of the Animal Farm malware suite.",
+        "source": "https://securelist.com/blog/research/69114/animals-in-the-apt-farm/"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Slingshot",
+    "aliases": [],
+    "externalIds": [],
+    "tags": ["usa", "jsoc", "state-sponsored", "cyber espionage", "mikrotik", "router compromise"],
+    "description": "Highly sophisticated APT platform rivaling Project Sauron and Regin in complexity. Active since at least 2012, attributed to US Joint Special Operations Command (JSOC) and Five Eyes. Infection vector via compromised MikroTik routers - malicious component downloaded by Winbox Loader (router management suite) infects administrators. Uses virtual file systems and advanced operational security. Targets entities across Middle East and Africa including Afghanistan, Congo, Iraq, Jordan, Kenya, Libya, Somalia, Sudan, Tanzania, Turkey, Yemen.",
+    "country": "United States",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/apt-slingshot/84312/",
+        "note": "Comprehensive technical analysis of Slingshot"
+      },
+      {
+        "source": "CyberScoop",
+        "url": "https://www.cyberscoop.com/kaspersky-slingshot-isis-operation-socom-five-eyes/",
+        "note": "Attribution to US SOCOM and Five Eyes"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Slingshot",
+        "software_id": null,
+        "type": "framework",
+        "description": "Full-blown spying framework with kernel-mode and user-mode components.",
+        "source": "https://securelist.com/apt-slingshot/84312/"
+      },
+      {
+        "name": "Cahnadr",
+        "software_id": null,
+        "type": "malware",
+        "description": "Kernel-mode component of Slingshot framework.",
+        "source": "https://securelist.com/apt-slingshot/84312/"
+      },
+      {
+        "name": "GollumApp",
+        "software_id": null,
+        "type": "malware",
+        "description": "User-mode component of Slingshot framework.",
+        "source": "https://securelist.com/apt-slingshot/84312/"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Project Tajmahal",
+    "aliases": [],
+    "externalIds": [],
+    "tags": ["apt", "central asia", "diplomatic targets", "advanced framework"],
+    "description": "Highly sophisticated APT framework consisting of two packages named 'Tokyo' and 'Yokohama'. Known to have targeted a single victim - a diplomatic entity from a country in Central Asia. Attribution unknown.",
+    "country": "Unknown",
+    "status": "unknown",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/project-tajmahal/90240/",
+        "note": "Discovery and technical analysis of Tajmahal framework"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Tokyo",
+        "software_id": null,
+        "type": "framework",
+        "description": "First package of the Tajmahal spying framework.",
+        "source": "https://securelist.com/project-tajmahal/90240/"
+      },
+      {
+        "name": "Yokohama",
+        "software_id": null,
+        "type": "framework",
+        "description": "Second package of the Tajmahal spying framework.",
+        "source": "https://securelist.com/project-tajmahal/90240/"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Sea Turtle",
+    "aliases": [
+      {
+        "name": "Silicon",
+        "source": "Microsoft"
+      },
+      {
+        "name": "UNC1326",
+        "source": "FireEye"
+      },
+      {
+        "name": "Marbled Dust",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Teal Kurma",
+        "source": "PwC"
+      },
+      {
+        "name": "Cosmic Wolf",
+        "source": "CrowdStrike"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["turkey", "state-sponsored", "dns hijacking", "middle east", "certificate theft"],
+    "description": "Turkish state-sponsored APT conducting DNS hijacking campaigns since at least January 2017. Cisco Talos identified 40+ organizations compromised across 13 countries. Focused on illicitly modifying DNS records to redirect users to actor-controlled servers, enabling traffic interception and obtaining valid encryption certificates. Targets include ministries of foreign affairs, military organizations, intelligence agencies, energy organizations, NGOs, think tanks, telecommunications, and aerospace/defense sectors across Middle East, North Africa, and Europe. DHS issued alert Jan 2019 warning about this activity.",
+    "country": "Turkey",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Cisco Talos",
+        "url": "https://blog.talosintelligence.com/2019/04/seaturtle.html",
+        "note": "Initial discovery and analysis of Sea Turtle campaign"
+      },
+      {
+        "source": "Cisco Talos Update",
+        "url": "https://blog.talosintelligence.com/2019/07/sea-turtle-keeps-on-swimming.html",
+        "note": "Follow-up analysis showing continued operations"
+      },
+      {
+        "source": "Reuters",
+        "url": "https://www.reuters.com/article/us-cyber-attack-hijack-exclusive/exclusive-hackers-acting-in-turkeys-interests-believed-to-be-behind-recent-cyberattacks-sources-idUSKBN1ZQ10X",
+        "note": "Attribution to Turkish interests"
+      },
+      {
+        "source": "PwC - Tortoise and Malware",
+        "url": "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/tortoise-and-malwahare.html",
+        "note": "PwC analysis calling group Teal Kurma"
+      },
+      {
+        "source": "StrikeReady",
+        "url": "https://blog.strikeready.com/blog/pivoting-through-a-sea-of-indicators-to-spot-turtles/",
+        "note": "Indicator analysis and hunting techniques"
+      },
+      {
+        "source": "Hunt & Hackett",
+        "url": "https://www.huntandhackett.com/blog/turkish-espionage-campaigns",
+        "note": "Turkish espionage campaigns in Netherlands (2021)"
+      }
+    ],
+    "tools": [
+      {
+        "name": "DNS Hijacking",
+        "software_id": null,
+        "type": "technique",
+        "description": "Man-in-the-middle attacks via DNS record manipulation to redirect traffic and steal credentials.",
+        "source": "https://blog.talosintelligence.com/2019/04/seaturtle.html"
+      }
+    ],
+    "notes": []
   }
 ]
