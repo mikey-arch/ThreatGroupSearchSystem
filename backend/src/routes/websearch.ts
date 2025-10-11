@@ -26,7 +26,8 @@ router.get("/", async (req, res) => {
   }
 
   try {
-    const url = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(query)}&api_key=${API_KEY}&num=10`;
+    const enhancedQuery = `${query} APT threat group cyber`;
+    const url = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(enhancedQuery)}&api_key=${API_KEY}&num=10`;
     console.log("Fetching SerpAPI:", url.replace(API_KEY, "***API_KEY***"));
 
     const response = await fetch(url);
