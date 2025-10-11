@@ -934,5 +934,192 @@
         "createdAt": "2025-10-08T08:27:00Z"
       }
     ]
+  },
+  {
+    "canonicalName": "Unit 8200",
+    "aliases": [
+      {
+        "name": "Olympic Games",
+        "source": "Operation name"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["israel", "state-sponsored", "cyber warfare", "critical infrastructure"],
+    "description": "Israeli military intelligence unit responsible for the Stuxnet operation targeting Iranian nuclear facilities. Stuxnet is typically introduced to the target environment via an infected USB flash drive.",
+    "country": "Israel",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["Duqu Group", "SunFlower"],
+    "sources": [
+      {
+        "source": "Langner Analysis",
+        "url": "http://www.langner.com/en/wp-content/uploads/2013/11/To-kill-a-centrifuge.pdf",
+        "note": "Technical analysis of Stuxnet"
+      },
+      {
+        "source": "Internet Archive",
+        "url": "https://archive.org/details/Stuxnet",
+        "note": "Stuxnet documentation"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Stuxnet",
+        "software_id": null,
+        "type": "worm",
+        "description": "Sophisticated malware designed to target and sabotage industrial control systems, specifically Siemens PLCs at Iranian nuclear facilities. Uses zero-day exploits and USB propagation.",
+        "source": "http://www.langner.com/en/wp-content/uploads/2013/11/To-kill-a-centrifuge.pdf"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "Duqu Group",
+    "aliases": [
+      {
+        "name": "SIG35",
+        "source": "NSA classification"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["israel", "state-sponsored", "espionage", "iran focused"],
+    "description": "A threat actor using Duqu 2.0 targeted individuals and companies linked to the P5+1 (the five permanent member states of the UN Security Council, plus Germany) conducting negotiations on Iran's nuclear program. Might be related to Stuxnet and attributed to Israel.",
+    "country": "Israel",
+    "status": "active",
+    "parentNames": ["Unit 8200"],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Kaspersky",
+        "url": "https://securelist.com/blog/research/70504/the-mystery-of-duqu-2-0-a-sophisticated-cyberespionage-actor-returns/",
+        "note": "Analysis of Duqu 2.0 campaign"
+      },
+      {
+        "source": "Kaspersky Report",
+        "url": "https://securelist.com/files/2015/06/The_Mystery_of_Duqu_2_0_a_sophisticated_cyberespionage_actor_returns.pdf",
+        "note": "Full technical report"
+      },
+      {
+        "source": "Wall Street Journal",
+        "url": "http://www.wsj.com/articles/spy-virus-linked-to-israel-targeted-hotels-used-for-iran-nuclear-talks-1433937601",
+        "note": "Targeting of Iran nuclear negotiation hotels"
+      },
+      {
+        "source": "CrySyS Lab",
+        "url": "https://blog.crysys.hu/2018/03/territorial-dispute-nsas-perspective-on-apt-landscape/",
+        "note": "NSA perspective on APT landscape"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Duqu 2.0",
+        "software_id": null,
+        "type": "espionage platform",
+        "description": "Advanced espionage malware targeting diplomatic negotiations, operates primarily in-memory with minimal disk footprint, making detection difficult.",
+        "source": "https://securelist.com/blog/research/70504/the-mystery-of-duqu-2-0-a-sophisticated-cyberespionage-actor-returns/"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "canonicalName": "SunFlower",
+    "aliases": [
+      {
+        "name": "MoonFlower",
+        "source": "Community"
+      },
+      {
+        "name": "Cheshire Cat",
+        "source": "Malware name"
+      },
+      {
+        "name": "Flowershop",
+        "source": "Community"
+      },
+      {
+        "name": "SIG17",
+        "source": "NSA classification"
+      },
+      {
+        "name": "SIG18",
+        "source": "NSA classification"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["israel", "state-sponsored", "cyber espionage"],
+    "description": "Might be related to Duqu and Stuxnet and attributed to Israel. Potentially represents the broader Israeli cyber operations umbrella.",
+    "country": "Israel",
+    "status": "unknown",
+    "parentNames": ["Unit 8200"],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "CrySyS Lab",
+        "url": "https://blog.crysys.hu/2018/03/territorial-dispute-nsas-perspective-on-apt-landscape/",
+        "note": "NSA perspective on APT landscape"
+      },
+      {
+        "source": "Malware Research",
+        "url": "https://malware-research.org/prepare-father-of-stuxnet-news-are-coming/",
+        "note": "Analysis suggesting connection to Stuxnet origins"
+      },
+      {
+        "source": "Yara Rules",
+        "url": "https://github.com/Yara-Rules/rules/blob/master/malware/APT_CheshireCat.yar",
+        "note": "Detection rules for Cheshire Cat malware"
+      }
+    ],
+    "tools": [],
+    "notes": []
+  },
+  {
+    "canonicalName": "Team Jorge",
+    "aliases": [],
+    "externalIds": [],
+    "tags": ["israel", "private sector", "disinformation", "mercenary"],
+    "description": "Private Israeli disinformation-for-hire group conducting influence operations and social media manipulation campaigns for clients worldwide.",
+    "country": "Israel",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Forbidden Stories",
+        "url": "https://forbiddenstories.org/story-killers/team-jorge-disinformation/",
+        "note": "Investigation into Team Jorge disinformation operations"
+      }
+    ],
+    "tools": [],
+    "notes": []
+  },
+  {
+    "canonicalName": "WeRedEvils",
+    "aliases": [
+      {
+        "name": "RedEvils",
+        "source": "Community"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["israel", "state-sponsored"],
+    "description": "Israeli threat actor with limited public information available.",
+    "country": "Israel",
+    "status": "unknown",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "Malpedia",
+        "url": "https://malpedia.caad.fkie.fraunhofer.de/actor/weredevils",
+        "note": "Malware attribution"
+      },
+      {
+        "source": "Jerusalem Post",
+        "url": "https://www.jpost.com/israel-news/article-770599",
+        "note": "News coverage"
+      }
+    ],
+    "tools": [],
+    "notes": []
   }
 ]
