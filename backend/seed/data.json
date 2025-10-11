@@ -122,13 +122,6 @@
         "type": "RAT",
         "description": "Gh0st RAT (Remote Access Terminal) is a trojan “Remote Access Tool” used on Windows platforms, and has been used to hack into some of the most sensitive computer networks on Earth.",
         "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.ghost_rat"
-      },
-      {
-        "name": "gh0st RAT",
-        "software_id": "S0433",
-        "type": "RAT",
-        "description": "Rifdoor is a remote access trojan (RAT) that shares numerous code similarities with HotCroissant.",
-        "source": "https://attack.mitre.org/software/S0433/"
       }
     ],
     "notes": [
@@ -767,7 +760,7 @@
     "tools": [
       {
         "name": "LaZagne",
-        "software_id": null,
+        "software_id": "S0349",
         "type": "tool",
         "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
         "source": "https://github.com/AlessandroZ/LaZagne"
@@ -932,6 +925,1641 @@
         "text": "MuddyWater has used PowerShell-based backdoors, DNS tunneling, and credential theft tools like Mimikatz to compromise government and telecom targets across the Middle East, North America, Asia, and Europe.",
         "author": "Analyst Águeda Alemany",
         "createdAt": "2025-10-08T08:27:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT29",
+    "aliases": [
+      {
+        "name": "Cozy Bear",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "NOBELIUM",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Blue Kitsune",
+        "source": "PWC"
+      },
+      {
+        "name": "The Dukes",
+        "source": "F-Secure"
+      },
+      {
+        "name": "Midnight Blizzard",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0016"
+      }
+    ],
+    "tags": ["apt", "russia", "espionage", "government targeting", "credential theft", "supply chain", "cloud intrusion", "stealth", "svr", "solarwinds"],
+    "description": "APT29 is threat group that has been attributed to Russia's Foreign Intelligence Service (SVR). They have operated since at least 2008, often targeting government networks in Europe and NATO member countries, research institutes, and think tanks. APT29 reportedly compromised the Democratic National Committee starting in the summer of 2015.",
+    "country": "Russia",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0016/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "SUNBURST",
+        "software_id": "S0559",
+        "type": "malware",
+        "description": "SUNBURST is a trojanized DLL designed to fit within the SolarWinds Orion software update framework. It was used by APT29 since at least February 2020.",
+        "source": "https://attack.mitre.org/software/S0559/"
+      },
+      {
+        "name": "GoldMax",
+        "software_id": "S0588",
+        "type": "malware",
+        "description": "Gold Max is a Golang written command and control backdoor used by the NOBELIUM threat actor group. It uses several different techniques to obfuscate its actions and evade detection. The malware writes an encrypted configuration file to disk, where the file name and AES-256 cipher keys are unique per implant and based on environmental variables and information about the network where it is running.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.goldmax"
+      },
+      {
+        "name": "GoldFinder",
+        "software_id": "S0597",
+        "type": "malware",
+        "description": "Another tool written in Go, GoldFinder was most likely used as a custom HTTP tracer tool that logs the route or hops that a packet takes to reach a hardcoded C2 server. When launched, the malware issues an HTTP request for a hardcoded IP address (e.g., hxxps://185[.]225[.]69[.]69/) and logs the HTTP response to a plaintext log file (e.g., loglog.txt created in the present working directory).",
+        "source": "https://apt.etda.or.th/cgi-bin/listgroups.cgi?t=GoldFinder"
+      },
+      {
+        "name": "Sibot",
+        "software_id": "S0589",
+        "type": "malware",
+        "description": "Sibot is dual-purpose malware written in VBScript designed to achieve persistence on a compromised system as well as download and execute additional payloads. Microsoft discovered three Sibot variants in early 2021 during its investigation of APT29 and the SolarWinds Compromise.",
+        "source": "https://attack.mitre.org/software/S0241/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "The Dukes show unusual confidence in their ability to continue successfully compromising their targets, as well as in their ability to operate with impunity.",
+        "author": "malpedia",
+        "createdAt": "2025-10-11T01:45:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "menuPass",
+    "aliases": [
+      {
+        "name": "APT10",
+        "source": "unit 42"
+      },
+      {
+        "name": "Red Apollo",
+        "source": "Microsoft"
+      },
+      {
+        "name": "POTASSIUM",
+        "source": "PWC"
+      },
+      {
+        "name": "Cicada",
+        "source": "F-Secure"
+      },
+      {
+        "name": "Stone Panda",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0016"
+      }
+    ],
+    "tags": ["apt10", "china", "cyber espionage", "state-sponsored", "credential theft", "supply chain", "network intrusion", "spear phishing", "cloud compromise", "government"],
+    "description": "menuPass is a threat group that has been active since at least 2006. Individual members of menuPass are known to have acted in association with the Chinese Ministry of State Security's (MSS) Tianjin State Security Bureau and worked for the Huaying Haitai Science and Technology Development Company.",
+    "country": "China",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0045/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "QuasarRAT",
+        "software_id": "S0262",
+        "type": "tool",
+        "description": "Quasar RAT is a malware family written in .NET which is used by a variety of attackers. The malware is fully functional and open source, and is often packed to make analysis of the source more difficult.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.quasar_rat"
+      },
+      {
+        "name": "PsExec",
+        "software_id": "S0029",
+        "type": "tool",
+        "description": "PsExec is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers.",
+        "source": "https://attack.mitre.org/software/S0029/"
+      },
+      {
+        "name": "RedLeaves",
+        "software_id": "S0153",
+        "type": "malware",
+        "description": "RedLeaves is a malware family used by menuPass. The code overlaps with PlugX and may be based upon the open source tool Trochilus.",
+        "source": "https://attack.mitre.org/software/S0153/"
+      },
+      {
+        "name": "Cobalt Strike",
+        "software_id": "S0154",
+        "type": "malware",
+        "description": "Cobalt Strike is a commercial, full-featured, remote access tool that bills itself as 'adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors'. Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system.",
+        "source": "https://attack.mitre.org/software/S0154/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT10 knows no boundaries when it comes to attacks. For example, one of the group's most notable campaigns was in 2014 when it targeted the US Office of Personnel Management (OPM) and stole the personal information of over 21 million government employees. This was considered one of the largest breaches of federal government data in US history.",
+        "author": "forbes",
+        "createdAt": "2025-10-11T02:10:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT41",
+    "aliases": [
+      {
+        "name": "Wicked Panda",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Brass Typhoon",
+        "source": "Microsoft"
+      },
+      {
+        "name": "BARIUM",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0016"
+      }
+    ],
+    "tags": ["apt41", "china", "apt", "cyber espionage", "state-sponsored", "financial crime", "supply chain", "ransomware", "winnti", "double-dragon", "malware", "spear phishing", "credential theft", "technology sector", "software supply compromise"],
+    "description": "APT41 is a threat group that researchers have assessed as Chinese state-sponsored espionage group that also conducts financially-motivated operations. Active since at least 2012.",
+    "country": "China",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["Earth Freybug", "Earth Longzhi"],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0096/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "ShadowPad",
+        "software_id": "S0596",
+        "type": "tool",
+        "description": "The ShadowPad advanced modular remote access trojan (RAT) has been deployed by the Chinese government-sponsored BRONZE ATLAS threat group since at least 2017. A growing list of other Chinese threat groups have deployed it globally since 2019 in attacks against organizations in various industry verticals.",
+        "source": "https://www.secureworks.com/research/shadowpad-malware-analysis"
+      },
+      {
+        "name": "PlugX",
+        "software_id": "S0013",
+        "type": "tool",
+        "description": "RSA describes PlugX as a RAT (Remote Access Trojan) malware family that is around since 2008 and is used as a backdoor to control the victim's machine fully. Once the device is infected, an attacker can remotely execute several kinds of commands on the affected system.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.plugx"
+      },
+      {
+        "name": "DUSTPAN",
+        "software_id": "S1158",
+        "type": "malware",
+        "description": "DUSTPAN is an in-memory dropper written in C/C++ used by APT41 since 2021 that decrypts and executes an embedded payload.",
+        "source": "https://attack.mitre.org/software/S1158/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT41's modus operandi is to perform cyber espionage, espionage and financial gain activities benefiting the nation state.",
+        "author": "fortiguard",
+        "createdAt": "2025-10-11T02:21:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "menuPass",
+    "aliases": [
+      {
+        "name": "APT10",
+        "source": "unit 42"
+      },
+      {
+        "name": "Red Apollo",
+        "source": "Microsoft"
+      },
+      {
+        "name": "POTASSIUM",
+        "source": "PWC"
+      },
+      {
+        "name": "Cicada",
+        "source": "F-Secure"
+      },
+      {
+        "name": "Stone Panda",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0016"
+      }
+    ],
+    "tags": ["apt10", "china", "cyber espionage", "state-sponsored", "credential theft", "supply chain", "network intrusion", "spear phishing", "cloud compromise", "government"],
+    "description": "menuPass is a threat group that has been active since at least 2006. Individual members of menuPass are known to have acted in association with the Chinese Ministry of State Security's (MSS) Tianjin State Security Bureau and worked for the Huaying Haitai Science and Technology Development Company.",
+    "country": "China",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0045/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "QuasarRAT",
+        "software_id": "S0262",
+        "type": "tool",
+        "description": "Quasar RAT is a malware family written in .NET which is used by a variety of attackers. The malware is fully functional and open source, and is often packed to make analysis of the source more difficult.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.quasar_rat"
+      },
+      {
+        "name": "PsExec",
+        "software_id": "S0029",
+        "type": "tool",
+        "description": "PsExec is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers.",
+        "source": "https://attack.mitre.org/software/S0029/"
+      },
+      {
+        "name": "RedLeaves",
+        "software_id": "S0153",
+        "type": "malware",
+        "description": "RedLeaves is a malware family used by menuPass. The code overlaps with PlugX and may be based upon the open source tool Trochilus.",
+        "source": "https://attack.mitre.org/software/S0153/"
+      },
+      {
+        "name": "Cobalt Strike",
+        "software_id": "S0154",
+        "type": "malware",
+        "description": "Cobalt Strike is a commercial, full-featured, remote access tool that bills itself as 'adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors'. Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system.",
+        "source": "https://attack.mitre.org/software/S0154/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT10 knows no boundaries when it comes to attacks. For example, one of the group's most notable campaigns was in 2014 when it targeted the US Office of Personnel Management (OPM) and stole the personal information of over 21 million government employees. This was considered one of the largest breaches of federal government data in US history.",
+        "author": "forbes",
+        "createdAt": "2025-10-11T02:10:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "FIN6",
+    "aliases": [
+      {
+        "name": "Magecart Group 6",
+        "source": "IBM"
+      },
+      {
+        "name": "ITG08",
+        "source": "IBM"
+      },
+      {
+        "name": "Skeleton Spider",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "TAAL",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Camouflage Tempest",
+        "source": "Microsoft"
+      }
+    ],
+
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0037" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0037/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["financial crime","POS malware","data theft","retail","hospitality","extortion"],
+    "description": "FIN6 is a cyber crime group that has stolen payment card data and sold it for profit on underground marketplaces. This group has aggressively targeted and compromised point of sale (PoS) systems in the hospitality and retail sectors.",
+    "country": "Unknown",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "FrameworkPOS",
+        "software_id": "S0503",
+        "type": "malware",
+        "description": "FrameworkPOS is a point of sale (POS) malware used by FIN6 to steal payment card data from sytems that run physical POS devices.",
+        "source": "https://attack.mitre.org/software/S0503/"
+      },
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a credential-dumping utility commonly leveraged by adversaries, penetration testers, and red teams to extract passwords. As an open source project, Mimikatz continues to be actively developed.",
+        "source": "https://redcanary.com/threat-detection-report/threats/mimikatz/"
+      },
+      {
+        "name": "PsExec",
+        "software_id": "S0029",
+        "type": "tool",
+        "description": "PsExec is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers.",
+        "source": "https://attack.mitre.org/software/S0029/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Cybercriminals from the long-running FIN6 group are posing as job seekers on platforms like LinkedIn to infect recruiters with malware delivered through fake resumes, according to a new report.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Winnti Group",
+    "aliases": [],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0044" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0037/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["espionage", "supply chain compromise", "software supply chain", "gaming industry", "IT sector", "credential theft", "backdoor malware", "long-term persistence"],
+    "description": "Winnti Group is a threat group with Chinese origins that has been active since at least 2010. The group has heavily targeted the gaming industry, but it has also expanded the scope of its targeting.",
+    "country": "China",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["Axiom", "APT17", "Ke3chang"],
+    "tools": [
+      {
+        "name": "Winnti",
+        "software_id": "S0503",
+        "type": "malware",
+        "description": "Winnti is a trojan typically used by a Chinese advanced persistent threat (APT) group of the same name.",
+        "source": "https://www.cyber.nj.gov/threat-landscape/malware/trojans/winnti"
+      },
+      {
+        "name": "PlugX",
+        "software_id": "S0013",
+        "type": "malware",
+        "description": "RSA describes PlugX as a RAT (Remote Access Trojan) malware family that is around since 2008 and is used as a backdoor to control the victim's machine fully. Once the device is infected, an attacker can remotely execute several kinds of commands on the affected system.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.plugx"
+      },
+      {
+        "name": "PipeMon",
+        "software_id": "S0501",
+        "type": "malware",
+        "description": "In at least one case, the attackers compromised the company’s build orchestration server, allowing them to take control of the victim’s automated build systems. This could have allowed the attackers to trojanize video game executables. With this attack, it would be possible to manipulate in-game currencies for financial gain.",
+        "source": "https://www.eset.com/us/about/newsroom/press-releases/winnti-group-targets-video-game-developers-again-eset-researchers-uncover-1/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Some say 'Blackfly' is an evolution of the Winnti Group, while others say they are separate groups that share tools and techniques. Blackfly has been observed using the same Winnti backdoor as the Winnti Group, as well as other tools and techniques commonly associated with the group.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T20:20:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT17",
+    "aliases": [
+      {
+        "name": "Deputy Dog",
+        "source": "CrowdStrike"
+      }
+    ],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0025" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0025/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["espionage", "state-sponsored", "China", "government targets", "defense industry", "law firms", "IT companies", "credential theft", "data exfiltration", "long-term persistence"],
+    "description": "APT17 is a China-based threat group that has conducted network intrusions against U.S. government entities, the defense industry, law firms, information technology companies, mining companies, and non-government organizations.",
+    "country": "China",
+    "status": "active",
+    "parentNames": ["Winnti Group"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "BLACKCOFFEE",
+        "software_id": "S0069",
+        "type": "malware",
+        "description": "BLACKCOFFEE is malware that has been used by several Chinese groups since at least 2013.",
+        "source": "https://attack.mitre.org/software/S0069/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "This group is a China-based cyber espionage actor believed to be sponsored by the Chinese Ministry of State Security (MSS), specifically the Jinan bureau.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T20:28:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Axiom",
+    "aliases": [
+      {
+        "name": "Group 72",
+        "source": "Talos"
+      }
+    ],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0001" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0001/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["espionage", "state-sponsored", "China", "aerospace", "defense", "government", "manufacturing", "media", "intellectual property theft", "long-term persistence", "spear-phishing", "watering hole attacks", "SQL injection", "backdoor malware", "credential theft"],
+    "description": "Group 72 is a long standing threat actor group involved in Operation SMN, named Axiom by Novetta. The group is sophisticated, well funded, and possesses an established, defined software development methodology. The group targets high profile organizations with high value intellectual property in the manufacturing, industrial, aerospace, defense, media sectors.",
+    "country": "China",
+    "status": "active",
+    "parentNames": ["Winnti Group"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "BLACKCOFFEE",
+        "software_id": "S0069",
+        "type": "malware",
+        "description": "BLACKCOFFEE is malware that has been used by several Chinese groups since at least 2013.",
+        "source": "https://attack.mitre.org/software/S0069/"
+      },
+      {
+        "name": "gh0st RAT",
+        "software_id": "S0032",
+        "type": "malware",
+        "description": "Gh0st RAT (Remote Access Terminal) is a trojan “Remote Access Tool” used on Windows platforms, and has been used to hack into some of the most sensitive computer networks on Earth.",
+        "source": "https://apt.etda.or.th/cgi-bin/listgroups.cgi?t=Gh0st%20RAT"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Some reporting suggests a degree of overlap between Axiom and Winnti Group but the two groups appear to be distinct based on differences in reporting on TTPs and targeting.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T20:36:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Ke3chang",
+    "aliases": [
+      {
+        "name": "APT15",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Vixen Panda",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Mirage",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Playful Dragon",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Nylon Typhoon",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0004" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0004/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["espionage", "state-sponsored", "China", "government", "diplomatic", "military", "NGOs", "energy", "aerospace", "manufacturing", "credential theft", "data exfiltration", "long-term persistence", "spear-phishing", "backdoor malware"],
+    "description": "Ke3chang is a threat group attributed to actors operating out of China. Ke3chang has targeted oil, government, diplomatic, military, and NGOs in Central and South America, the Caribbean, Europe, and North America since at least 2010.",
+    "country": "China",
+    "status": "active",
+    "parentNames": ["Winnti Group"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "ipconfig",
+        "software_id": "S0100",
+        "type": "malware",
+        "description": "ipconfig is a Windows utility that can be used to find information about a system's TCP/IP, DNS, DHCP, and adapter configuration.",
+        "source": "https://attack.mitre.org/software/S0100/"
+      },
+      {
+        "name": "PipeMon",
+        "software_id": "S0439",
+        "type": "malware",
+        "description": "Okrum is a Windows backdoor that has been seen in use since December 2016 with strong links to Ke3chang.",
+        "source": "https://attack.mitre.org/software/S0439/"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Ke3chang",
+    "aliases": [
+      {
+        "name": "APT15",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Vixen Panda",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Mirage",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Playful Dragon",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Nylon Typhoon",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0004" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0004/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["espionage", "state-sponsored", "China", "government", "diplomatic", "military", "NGOs", "energy", "aerospace", "manufacturing", "credential theft", "data exfiltration", "long-term persistence", "spear-phishing", "backdoor malware"],
+    "description": "Ke3chang is a threat group attributed to actors operating out of China. Ke3chang has targeted oil, government, diplomatic, military, and NGOs in Central and South America, the Caribbean, Europe, and North America since at least 2010.",
+    "country": "China",
+    "status": "active",
+    "parentNames": ["Winnti Group"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post-exploitation tool that extracts plaintext credentials, password hashes, and Kerberos tickets from Windows systems, enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "ipconfig",
+        "software_id": "S0100",
+        "type": "malware",
+        "description": "ipconfig is a Windows utility that can be used to find information about a system's TCP/IP, DNS, DHCP, and adapter configuration.",
+        "source": "https://attack.mitre.org/software/S0100/"
+      },
+      {
+        "name": "PipeMon",
+        "software_id": "S0439",
+        "type": "malware",
+        "description": "Okrum is a Windows backdoor that has been seen in use since December 2016 with strong links to Ke3chang.",
+        "source": "https://attack.mitre.org/software/S0439/"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Equation Group",
+    "aliases": [
+      {
+        "name": "EQGRP",
+        "source": "NCC Group"
+      },
+      {
+        "name": "Tilded Team",
+        "source": "NCC Group"
+      }
+    ],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0020" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0020/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["espionage", "state-sponsored", "United States", "signals intelligence", "government targets", "telecommunications", "critical infrastructure", "zero-day exploits", "advanced malware", "long-term persistence", "data exfiltration", "sophisticated tooling", "backdoors", "custom malware", "cyber operations"],
+    "description": "The Equation Group is a highly sophisticated threat actor described by its discoverers at Kaspersky Labs as one of the most sophisticated cyber attack groups in the world, operating alongside but always from a position of superiority with the creators of Stuxnet and Flame",
+    "country": "United States of America",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "EquationDrug",
+        "type": "malware",
+        "description": "A trojan is a type of malware that performs activites without the user’s knowledge. These activities commonly include establishing remote access connections, capturing keyboard input, collecting system information, downloading/uploading files, dropping other malware into the infected system, performing denial-of-service (DoS) attacks, and running/terminating processes.",
+        "source": "https://fortiguard.fortinet.com/encyclopedia/virus/8262910"
+      },
+      {
+        "name": "GROK keylogger",
+        "type": "malware",
+        "description": "It is the case of a very sophisticated keylogger used by the Equation Group called “Grok”, which was also mentioned in one of the documents leaked by Edward Snowden. Grok is considered a keylogging component of the UNITEDRAKE malware, which experts linked to Regin malware.",
+        "source": "https://apt.etda.or.th/cgi-bin/listgroups.cgi?t=GROK"
+      }
+    ],
+    "notes": [
+      {
+        "text": "This group is suspected to be sponsored by the United States of America and is believed to be associated with the National Security Agency (NSA).",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T20:54:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Poseidon Group",
+    "aliases": [],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G0033" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0033/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["cybercrime", "ransomware", "data theft", "extortion", "phishing", "credential harvesting", "malware distribution", "initial access", "C2 infrastructure", "lateral movement", "privilege escalation", "financially motivated", "unknown-attribution"],
+    "description": "The Poseidon Group is a long-running team operating on all domains: land, air, and sea. They are dedicated to running targeted attacks campaigns to aggressively collect information from company networks through the use of spear-phishing packaged with embedded, executable elements inside office documents and extensive lateral movement tools. ",
+    "country": "Brazil",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "IGT supertool",
+        "type": "malware",
+        "description": "A noteworthy addition to the Poseidon toolkit is the IGT supertool (Information Gathering toolkit), a bulking 15 megabyte executable that orchestrates a series of different information collections steps, exfiltration, and the cleanup of components. ",
+        "source": "https://apt.etda.or.th/cgi-bin/listgroups.cgi?t=IGT%20supertool"
+      }
+    ],
+    "notes": [
+      {
+        "text": "The group has a history of using information exfiltrated from victims to blackmail victim companies into contracting the Poseidon Group as a security firm.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T21:24:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "ALPHV",
+    "aliases": [
+      {
+        "name": "BlackCat Gang",
+        "source": "Unknown"
+      },
+      {
+        "name": "ALPHVM",
+        "source": "Self given"
+      },
+      {
+        "name": "Ambitious Scorpius",
+        "source": "Palo Alto"
+      }
+    ],
+    "externalIds": [],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0033/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["ransomware","RaaS","quadruple extortion","Rust-based","cross-platform","data theft","data destruction","DDoS threats","financial sector","healthcare","critical infrastructure","Russia-linked","extortion"],
+    "description": "BlackCat (aka ALPHV) is a ransomware family that surfaced in mid-November 2021 and quickly gained notoriety for its sophistication and innovation. Operating a ransomware-as-a-service (RaaS) business model, BlackCat was observed soliciting for affiliates in known cybercrime forums, offering to allow affiliates to leverage the ransomware and keep 80-90% of the ransom payment. ",
+    "country": "Unknown",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["Scattered Spider"],
+    "tools": [
+      {
+        "name": "BlackCat",
+        "type": "malware",
+        "description": "BlackCat is ransomware written in Rust that has been offered via the Ransomware-as-a-Service (RaaS) model. First observed November 2021, BlackCat has been used to target multiple sectors and organizations in various countries and regions in Africa, the Americas, Asia, Australia, and Europe.",
+        "source": "https://attack.mitre.org/software/S1068/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Notably, the group uses multiple extortion techniques in some cases, including the siphoning of victim data before ransomware deployment, threats to release data if the ransom is not paid and distributed denial-of-service (DDoS) attacks.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T21:31:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Scattered Spider",
+    "aliases": [
+      {
+        "name": "UNC3944",
+        "source": "Mandiant"
+      },
+      {
+        "name": "Muddled Libra",
+        "source": "Palo Alto"
+      },
+      {
+        "name": "Octo Tempest",
+        "source": "Microsoft"
+      }
+    ],
+    "externalIds": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "group_id": "G1015" 
+      }
+    ],
+    "sources": [
+      { 
+        "source": "MITRE ATT&CK", 
+        "url": "https://attack.mitre.org/groups/G0033/", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["ransomware", "RaaS", "social engineering", "MFA bypass", "credential theft", "double extortion", "supply chain attacks", "telecom targeting", "IT help desk impersonation", "US-UK-Canada origin", "adversary emulation", "youthful operators", "cross-industry targeting", "high-profile breaches"],
+    "description": "UNC3944 is a financially motivated threat cluster that has persistently used phone-based social engineering and SMS phishing campaigns (smishing) to obtain credentials to gain and escalate access to victim organizations.",
+    "country": "Unknown",
+    "status": "active",
+    "parentNames": ["ALPHV"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "BlackCat",
+        "type": "malware",
+        "description": "BlackCat is ransomware written in Rust that has been offered via the Ransomware-as-a-Service (RaaS) model. First observed November 2021, BlackCat has been used to target multiple sectors and organizations in various countries and regions in Africa, the Americas, Asia, Australia, and Europe.",
+        "source": "https://attack.mitre.org/software/S1068/"
+      },
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post‑exploitation tool that extracts plaintext credentials, password hashes, PINs and Kerberos tickets from Windows systems (LSASS memory, SAM, etc.), enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "LaZagne",
+        "software_id": "S0349",
+        "type": "tool",
+        "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
+        "source": "https://attack.mitre.org/software/S0349/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Mandiant has already directly observed their targeting broaden beyond telecommunication and business process outsourcer (BPO) companies to a wide range of industries including hospitality, retail, media and entertainment, and financial services.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T21:38:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Earth Freybug",
+    "aliases": [],
+    "externalIds": [],
+    "sources": [
+      { 
+        "source": "malpedia", 
+        "url": "https://malpedia.caad.fkie.fraunhofer.de/actor/earth_freybug", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["cyber espionage", "APT41 subset", "DLL hijacking", "API unhooking", "UNAPIMON", "China-linked", "financial espionage", "supply chain attacks", "advanced persistent threat", "global targeting"],
+    "description": "Earth Freybug is a cyberthreat group that has been active since at least 2012 that focuses on espionage and financially motivated activities. It has been observed to target organizations from various sectors across different countries.",
+    "country": "China",
+    "status": "active",
+    "parentNames": ["APT41"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "UNAPIMON",
+        "type": "malware",
+        "description": "Looking at the behavior of UNAPIMON and how it was used in the attack, we can infer that its primary purpose is to unhook critical API functions in any child process. For environments that implement API monitoring through hooking such as sandboxing systems, UNAPIMON will prevent child processes from being monitored. Thus, this malware can allow any malicious child process to be executed with its behavior undetected.",
+        "source": "https://www.trendmicro.com/en_us/research/24/d/earth-freybug.html"
+      },
+      {
+        "name": "Living off the Land",
+        "type": "tool",
+        "description": "Living-off-the-land tactics mean that attackers are using pre-installed tools to carry out their work. This makes it more difficult for defenders to detect attacks and researchers to identify the attackers behind the campaign. In the attacks we're seeing, there are binaries supplied by the victim's operating system that are normally used for legitimate purposes, but in these cases, are being abused by the attackers.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Earth Longzhi",
+    "aliases": [],
+    "externalIds": [],
+    "sources": [
+      { 
+        "source": "malpedia", 
+        "url": "https://malpedia.caad.fkie.fraunhofer.de/actor/earth_freybug", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["cyber espionage", "APT41 subgroup", "DLL sideloading", "BYOVD", "Cobalt Strike", "CroLoader", "BigpipeLoader", "SymaticLoader", "stack rumbling", "IFEO injection", "China-linked", "Southeast Asia targeting", "government", "healthcare", "telecom", "aviation", "urban development", "supply chain attacks"],
+    "description": "Earth Longzhi is a subgroup of APT41 targeting organizations based in Taiwan, Thailand, the Philippines, and Fiji, and using “stack rumbling” via Image File Execution Options (IFEO), a new denial-of-service (DoS) technique to disable security software.",
+    "country": "China",
+    "status": "active",
+    "parentNames": ["APT41"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "BigpipeLoader",
+        "type": "malware",
+        "description": "Looking at the behavior of UNAPIMON and how it was used in the attack, we can infer that its primary purpose is to unhook critical API functions in any child process. For environments that implement API monitoring through hooking such as sandboxing systems, UNAPIMON will prevent child processes from being monitored. Thus, this malware can allow any malicious child process to be executed with its behavior undetected.",
+        "source": "https://www.trendmicro.com/en_us/research/24/d/earth-freybug.html"
+      },
+      {
+        "name": "Cobalt Strike",
+        "software_id": "S0154",
+        "type": "malware",
+        "description": "Cobalt Strike is a commercial, full-featured, remote access tool that bills itself as 'adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors'.",
+        "source": "https://attack.mitre.org/software/S0154/"
+      },
+      {
+        "name": "CroxLoader",
+        "type": "malware",
+        "description": "This is a custom loader for win.cobalt_strike, used by Earth Longzhi",
+        "source": "https://www.trendmicro.com/en_us/research/23/e/attack-on-security-titans-earth-longzhi-returns-with-new-tricks.html"
+      }
+    ]
+  },
+  {
+    "canonicalName": "CIA",
+    "aliases": [
+      {
+        "name": "Central Intelligence Agency",
+        "source": "Self given"
+      } 
+    ],
+    "externalIds": [],
+    "sources": [
+      { 
+        "source": "ETDA", 
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=CIA&n=1", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["intelligence", "espionage", "state-sponsored", "United States", "covert operations", "cyber operations", "technical exploitation", "SIGINT", "foreign intelligence", "national security", "offensive cyber", "counterintelligence"],
+    "description": "The Central Intelligence Agency is a civilian foreign intelligence service of the federal government of the United States, tasked with gathering, processing, and analyzing national security information from around the world, primarily through the use of human intelligence (HUMINT).",
+    "country": "United States of America",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["Longhorn"],
+    "tools": [],
+    "notes": [
+      {
+        "text": "The CIA was also one of the parties involved in Operation Olympic Games where Stuxnet was deployed in Iran.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T22:00:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Longhorn",
+    "aliases": [
+      {
+        "name": "The Lamberts",
+        "source": "Kaspersky"
+      },
+      {
+        "name": "Platinum Terminal",
+        "source": "SecureWorks"
+      },
+      {
+        "name": "APT-C-39",
+        "source": "Qihoo 360"
+      }
+    ],
+    "externalIds": [],
+    "sources": [
+      { 
+        "source": "ETDA", 
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=CIA&n=1", 
+        "note": "Primary technical attribution source" 
+      }
+    ],
+    "tags": ["intelligence", "espionage", "state-sponsored", "United States", "covert operations", "cyber operations", "technical exploitation", "SIGINT", "foreign intelligence", "national security", "offensive cyber", "counterintelligence"],
+    "description": "Longhorn has been active since at least 2011. It has used a range of back door Trojans in addition to zero-day vulnerabilities to compromise its targets. Longhorn has infiltrated governments and internationally operating organizations, in addition to targets in the financial, telecoms, energy, aerospace, information technology, education, and natural resources sectors. All of the organizations targeted would be of interest to a nation-state attacker.",
+    "country": "United States of America",
+    "status": "active",
+    "parentNames": ["CIA"],
+    "childNames": [],
+    "tools": [
+      {
+        "name": "Black Lambert",
+        "type": "malware",
+        "description": "A malware implant, was found in a 2014 targeted attack against European organizations.",
+        "source": "https://threatpost.com/tools-used-by-lamberts-apt-found-in-vault-7-dumps/124900/"
+      },
+      {
+        "name": "Corentry",
+        "type": "malware",
+        "description": "A trojan detected by Symantec as Trojan.Corentry has all the features of the Fluxwire tool contained in the Vault 7 dump. The Fluxwire changelog closely matches the timeline when Symantec detected new features in Corentry samples.",
+        "source": "https://www.bleepingcomputer.com/news/security/longhorn-cyber-espionage-group-is-actually-the-cia/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Longhorn’s malware appears to be specifically built for espionage-type operations, with detailed system fingerprinting, discovery, and exfiltration capabilities. ",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T22:10:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT42",
+    "aliases": [
+      {
+        "name": "GreenBravo",
+        "source": "Recorded Future"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G1044"
+      }
+    ],
+    "tags": ["Iranian state-sponsored", "cyber espionage", "credential harvesting", "spear phishing", "social engineering", "Android malware", "PINEFLOWER", "NICECURL", "TAMECAT", "BlackSmith", "cloud exploitation", "surveillance", "IRGC-IO", "election interference", "Middle East targeting", "global targeting"],
+    "description": "APT42 is an Iranian-sponsored threat group that conducts cyber espionage and surveillance.[1] The group primarily focuses on targets in the Middle East region, but has targeted a variety of industries and countries since at least 2015.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G1044/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "NICECURL",
+        "software_id": "S1192",
+        "type": "malware",
+        "description": "NICECURL is a VBScript-based backdoor used by APT42 to download additional modules.",
+        "source": "https://attack.mitre.org/software/S1192/"
+      },
+      {
+        "name": "TAMECAT",
+        "software_id": "S1193",
+        "type": "malware",
+        "description": "TAMECAT is a malware that is used by APT42 to execute PowerShell or C# content.",
+        "source": "https://attack.mitre.org/software/S0665/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT42 activities have been linked to Magic Hound by other commercial vendors. While there are behavior and software overlaps between Magic Hound and APT42, they appear to be distinct entities and are tracked as separate entities by their originating vendor.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T22:18:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "DarkHotel",
+    "aliases": [
+      {
+        "name": "Dubnium",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Shadow Crane",
+        "source": "CrowdStrike"
+      },
+      {
+        "name": "Zigzag Hail",
+        "source": "Microsoft"
+      }
+
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0012"
+      }
+    ],
+    "tags": ["cyber espionage","APT","South Korea-linked","hotel Wi-Fi attacks","spear phishing","credential theft","supply chain attacks","malware deployment","targeted attacks","business travelers","advanced persistent threat","Asia-Pacific targeting","corporate espionage"],
+    "description": "The activities of the DarkHotel advanced persistent threat (APT) actor came to light in November 2014, when Kaspersky published a report detailing a sophisticated cyberespionage campaign targeting business travelers in the Asia-Pacific region. The group has been around for nearly a decade and some researchers believe its members are Korean speakers.",
+    "country": "South Korea",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0012/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Asruex",
+        "type": "malware",
+        "description": "Asruex infects a system through a shortcut file that has a PowerShell download script, and spreads through removable drives and network drives.",
+        "source": "https://www.trendmicro.com/en_us/research/19/h/asruex-backdoor-variant-infects-word-documents-and-pdfs-through-old-ms-office-and-adobe-vulnerabilities.html"
+      },
+      {
+        "name": "Karba",
+        "type": "malware",
+        "description": "This malware is 220Kb in size. It was built as MFC framework application with a lot of extra calls that should have complicated the analysis of the sample. It mimics a GUI desktop application but it does not create any visible windows or dialogs to interact with local users. The Trojan collects data about the system and anti-malware software installed on it, and uploads that data to Darkhotel command and control servers.",
+        "source": "https://apt.etda.or.th/cgi-bin/listgroups.cgi?t=Karba"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Some reporting suggests a degree of overlap between DarkHotel and another group named Higaisa, however the two groups appear to be distinct based on differences in reporting on TTPs and targeting.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T22:39:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Higaisa",
+    "aliases": [],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0126"
+      }
+    ],
+    "tags": ["cyber espionage","South Korea-linked","state-sponsored","spear phishing","credential theft","government targeting","military targeting","APT","advanced persistent threat","regional intelligence operations","supply chain attacks","malware deployment"],
+    "description": "Higaisa is a threat group suspected to have South Korean origins. Higaisa has targeted government, public, and trade organizations in North Korea; however, they have also carried out attacks in China, Japan, Russia, Poland, and other nations. Higaisa was first disclosed in early 2019 but is assessed to have operated as early as 2009.",
+    "country": "South Korea",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0126/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "certutil",
+        "software_id": "S0160",
+        "type": "tool",
+        "description": "CertUtil.exe is an admin command line tool intended by Microsoft to be used for manipulating certification authority (CA) data and components. This includes verifying certificates and certificate chains, dumping and displaying CA configuration information and configuring Certificate Services. Attackers can use certutil to replace PowerShell for specific tasks such as downloading a file from a remote URL and encoding and decoding a Base64 obfuscated payload.",
+        "source": "https://attack.mitre.org/software/S0160/"
+      },
+      {
+        "name": "gh0st RAT",
+        "software_id": "S0032",
+        "type": "RAT",
+        "description": "Gh0st RAT (Remote Access Terminal) is a trojan “Remote Access Tool” used on Windows platforms, and has been used to hack into some of the most sensitive computer networks on Earth.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.ghost_rat"
+      },
+      {
+        "name": "PlugX",
+        "software_id": "S0013",
+        "type": "tool",
+        "description": "RSA describes PlugX as a RAT (Remote Access Trojan) malware family that is around since 2008 and is used as a backdoor to control the victim's machine fully. Once the device is infected, an attacker can remotely execute several kinds of commands on the affected system.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.plugx"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Some reporting suggests a degree of overlap between Higaisa and another group named Darkhotel, however the two groups appear to be distinct based on differences in reporting on TTPs and targeting.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T22:44:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT33",
+    "aliases": [
+      {
+        "name": "Elfin",
+        "source": "Symantec"
+      },
+      {
+        "name": "Holmium",
+        "source": "Microsoft"
+      },
+      {
+        "name": "Refined Kitten",
+        "source": "CrowdStrike"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0064"
+      }
+    ],
+    "tags": ["Iranian state-sponsored","cyber espionage","military targeting","aerospace targeting","energy sector targeting","spear phishing","malware deployment","Shamoon","advanced persistent threat","credential theft","infrastructure disruption","Iran-linked","regional intelligence operations"],
+    "description": "APT33 is a suspected Iranian threat group that has carried out operations since at least 2013. The group has targeted organizations across multiple industries in the United States, Saudi Arabia, and South Korea, with a particular interest in the aviation and energy sectors.",
+    "country": "Iran",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/groups/G0126/",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "AutoIt backdoor",
+        "software_id": "S0129",
+        "type": "malware",
+        "description": "AutoIt backdoor is malware that has been used by the actors responsible for the MONSOON campaign. The actors frequently used it in weaponized .pps files exploiting CVE-2014-6352. [1] This malware makes use of the legitimate scripting language for Windows GUI automation with the same name.",
+        "source": "https://attack.mitre.org/software/S0129/"
+      },
+      {
+        "name": "DEADWOOD",
+        "software_id": "S1134",
+        "type": "malware",
+        "description": "DEADWOOD is wiper malware written in C++ using Boost libraries. DEADWOOD was first observed in an unattributed wiping event in Saudi Arabia in 2019, and has since been incorporated into Agrius operations.",
+        "source": "https://attack.mitre.org/software/S1134/"
+      },
+      {
+        "name": "PlugX",
+        "software_id": "S0013",
+        "type": "tool",
+        "description": "RSA describes PlugX as a RAT (Remote Access Trojan) malware family that is around since 2008 and is used as a backdoor to control the victim's machine fully. Once the device is infected, an attacker can remotely execute several kinds of commands on the affected system.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.plugx"
+      },
+      {
+        "name": "Mimikatz",
+        "software_id": "S0002",
+        "type": "tool",
+        "description": "Mimikatz is a post‑exploitation tool that extracts plaintext credentials, password hashes, PINs and Kerberos tickets from Windows systems (LSASS memory, SAM, etc.), enabling lateral movement and privilege escalation.",
+        "source": "https://attack.mitre.org/software/S0002/"
+      },
+      {
+        "name": "LaZagne",
+        "software_id": "S0349",
+        "type": "tool",
+        "description": "LaZagne is an open-source credential recovery tool that extracts passwords from local applications. It supports modules for browsers, databases, and system components, and has been used by threat actors to gather credentials from compromised systems.",
+        "source": "https://attack.mitre.org/software/S0349/"
+      },
+      {
+        "name": "DarkComet",
+        "software_id": "S0334",
+        "type": "malware",
+        "description": "DarkComet is a remote access tool (RAT) with features including remote shell, file transfer, keylogging, screen and video capture, and remote process control — commonly used to control compromised hosts and collect sensitive data.",
+        "source": "https://attack.mitre.org/software/S0334/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "APT 33 seems to be closely related to OilRig, APT 34, Helix Kitten, Chrysene since at least 2017.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T22:51:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT-C-36",
+    "aliases": [
+      {
+        "name": "Blind Eagle",
+        "source": "Qihoo 360"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0099"
+      }
+    ],
+    "tags": ["Colombia-linked","cyber espionage","financial crime","government targeting","APT","information theft","RAT deployment","AsyncRAT","BitRAT","BlotchyQuasar","Imminent Monitor","njRAT","LimeRAT","RemcosRAT","WarzoneRAT","Latin America targeting","multi-sector targeting","Windows platform"],
+    "description": "APT-C-36 is a suspected South America espionage group that has been active since at least 2018. The group mainly targets Colombian government institutions as well as important corporations in the financial sector, petroleum industry, and professional manufacturing.",
+    "country": "Colombia",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Blind%20Eagle&n=1",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Imminent Monitor",
+        "software_id": "S0434",
+        "type": "tool",
+        "description": "Imminent Monitor was a commodity remote access tool (RAT) offered for sale from 2012 until 2019, when an operation was conducted to take down the Imminent Monitor infrastructure. Various cracked versions and variations of this RAT are still in circulation.",
+        "source": "https://attack.mitre.org/software/S0434/"
+      },
+      {
+        "name": "AsyncRAT",
+        "software_id": "S0434",
+        "type": "tool",
+        "description": "AsyncRAT is a Remote Access Tool (RAT) designed to remotely monitor and control other computers through a secure encrypted connection. It is an open source remote administration tool, however, it could also be used maliciously because it provides functionality such as keylogger, remote desktop control, and many other functions that may cause harm to the victim’s computer.",
+        "source": "https://attack.mitre.org/software/S1087/"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Till this moment, 360 Threat Intelligence Center captured 29 bait documents, 62 Trojan samples and multiple related malicious domains in total. Attackers are targeting Windows platform and aiming at government institutions as well as big companies in Colombia.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T23:03:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Patchwork",
+    "aliases": [
+      {
+        "name": "Operation HangOver",
+        "source": "Shadowserver Foundation"
+      },
+      {
+        "name": "Monsoon",
+        "source": "Forcepoint"
+      },
+      {
+        "name": "Viceroy Tiger",
+        "source": "CrowdStrike"
+      }
+    ],
+    "externalIds": [
+      {
+        "source": "MITRE ATT&CK",
+        "group_id": "G0040"
+      }
+    ],
+    "tags": ["India-linked","cyber espionage","APT","credential harvesting","spear phishing","malware deployment","government targeting","military targeting","South Asia targeting","advanced persistent threat","information theft","regional intelligence operations"],
+    "description": "Patchwork is a cyber espionage group that was first observed in December 2015. While the group has not been definitively attributed, circumstantial evidence suggests the group may be a pro-Indian or Indian entity.",
+    "country": "India",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Operation%20HangOver%2C%20Monsoon%2C%20Viceroy%20Tiger&n=1",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "AutoIt backdoor",
+        "software_id": "S0129",
+        "type": "malware",
+        "description": "AutoIt backdoor is malware that has been used by the actors responsible for the MONSOON campaign. The actors frequently used it in weaponized .pps files exploiting CVE-2014-6352. [1] This malware makes use of the legitimate scripting language for Windows GUI automation with the same name.",
+        "source": "https://attack.mitre.org/software/S0129/"
+      },
+      {
+        "name": "QuasarRAT",
+        "software_id": "S0262",
+        "type": "malware",
+        "description": "QuasarRAT is a remote access trojan written in .NET that provides keylogging, screen capture, file manipulation, and remote command execution. It is commonly used by threat actors for surveillance and data exfiltration.",
+        "source": "https://attack.mitre.org/software/S0262/"
+      },
+      {
+        "name": "BackConfig",
+        "software_id": "S0475",
+        "type": "malware",
+        "description": "BackConfig is a custom Trojan with a flexible plugin architecture that has been used by Patchwork.",
+        "source": "https://attack.mitre.org/software/S0475/"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Operation Layover",
+    "aliases": [],
+    "externalIds": [],
+    "tags": ["Nigeria-linked","cyber espionage","information theft","aviation industry targeting","commodity RATs","AsyncRAT","CyberGate RAT","njRAT","low sophistication","off-the-shelf malware","remote access tools","regional intelligence operations"],
+    "description": "Cisco Talos and other security researchers have recently reported on a series of malicious campaigns targeting the aviation industry. These reports mainly center around the crypter that hides the usage of commodity malicious remote access tools.",
+    "country": "Nigeria",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Operation%20HangOver%2C%20Monsoon%2C%20Viceroy%20Tiger&n=1",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "AsyncRAT",
+        "software_id": "S0434",
+        "type": "tool",
+        "description": "AsyncRAT is a Remote Access Tool (RAT) designed to remotely monitor and control other computers through a secure encrypted connection. It is an open source remote administration tool, however, it could also be used maliciously because it provides functionality such as keylogger, remote desktop control, and many other functions that may cause harm to the victim’s computer.",
+        "source": "https://attack.mitre.org/software/S1087/"
+      },
+      {
+        "name": "CyberGate RAT",
+        "type": "malware",
+        "description": "According to Subex Secure, CyberGate is a Remote Access Trojan (RAT) that allows an attacker to gain unauthorized access to the victim’s system. Attackers can remotely connect to the compromised system from anywhere around the world.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.cybergate"
+      },
+      {
+        "name": "njRAT",
+        "software_id": "S0385",
+        "type": "malware",
+        "description": "njRAT is a remote access tool (RAT) that was first observed in 2012. It has been used by threat actors in the Middle East.",
+        "source": "https://attack.mitre.org/software/S0385/"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Snowglobe",
+    "aliases": [
+      {
+        "name": "Animal Farm",
+        "source": "Kaspersky"
+      },
+      {
+        "name": "SIG20",
+        "source": "NSA"
+      },
+      {
+        "name": "ATK 8",
+        "source": "Thales"
+      }
+
+    ],
+    "externalIds": [],
+    "tags": ["France-linked","state-sponsored","cyber espionage","information theft","defense targeting","government targeting","media targeting","Babar","Casper","Dino","EvilBunny","Tafacalou","Nbot","Chocopop","advanced persistent threat","international targeting"],
+    "description": "France-linked, state-sponsored cyber espionage group active since 2011, targeting defense, government, media, and private sectors using RATs like Babar, Casper, and EvilBunny.",
+    "country": "France",
+    "status": "active",
+    "parentNames": [],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Snowglobe%2C%20Animal%20Farm&n=1",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Babar",
+        "type": "malware",
+        "description": "Babar’s feature set includes keystroke logging, clipboard logging and, most interesting, the possibility to log audio conversations – the elephant has big ears!",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.babar"
+      },
+      {
+        "name": "Casper",
+        "type": "malware",
+        "description": "To attack their targets, Casper’s operators used zero-day exploits in Adobe Flash, and these exploits were – surprisingly – hosted on a Syrian governmental website. Casper is a well-developed reconnaissance tool, making extensive efforts to remain unseen on targeted machines.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.casper"
+      },
+      {
+        "name": "Dino",
+        "type": "malware",
+        "description": "Roughly, Dino can be described as an elaborate backdoor built in a modular fashion.",
+        "source": "https://www.welivesecurity.com/2015/06/30/dino-spying-malware-analyzed/"
+      }
+    ]
+  },
+  {
+    "canonicalName": "Syrian Electronic Army",
+    "aliases": [
+      {
+        "name": "Syria Malware Team",
+        "source": "self given"
+      },
+      {
+        "name": "Deadeye Jackal",
+        "source": "self given"
+      },
+      {
+        "name": "ATK 196",
+        "source": "Thales"
+      }
+
+    ],
+    "externalIds": [],
+    "tags": ["Syria-linked","state-sponsored","cyber espionage","information theft","political targeting","defense targeting","government targeting","media targeting","website defacement","phishing","DDoS","malware deployment","AndoServer","SandroRAT","SilverHawk","SLRat","SpyNote RAT","APT-C-27","APT-C-37","regional intelligence operations","Arab cyber actor"],
+    "description": "The Syrian Electronic Army uses spam, website defacement, malware, phishing and denial of service attacks against political opposition groups, Western news agencies, human rights groups and seemingly neutral websites for Syrian conflicts.",
+    "country": "Syria",
+    "status": "active",
+    "parentNames": [],
+    "childNames": ["APT-C-27","APT-C-37"],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Syrian%20Electronic%20Army%20%28SEA%29%2C%20Deadeye%20Jackal&n=1",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "AndoServer",
+        "type": "malware",
+        "description": "AndoServer malware, which can capture GPS data, steal call logs and text messages, launch other apps, take screenshots and record audio, among other functions.",
+        "source": "https://www.politico.com/newsletters/morning-cybersecurity/2020/04/16/report-on-north-korean-hacking-offers-a-surprise-twist-786913"
+      },
+      {
+        "name": "SandroRAT",
+        "type": "malware",
+        "description": "A novel functionality of this threat is its ability to access the encrypted Whatsapp chats (available in the path /WhatsApp/Databases/msgstore.db.crypt5 on the SD card) and obtain the unique encryption key using the Google email account of the device to get the chats in plain text and store them in the file waddb.sr. Also has normal functionality found in other Android RATs",
+        "source": "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/sandrorat-android-rat-targeting-polish-banking-users-via-e-mail-phishing/"
+      },
+      {
+        "name": "SLRat",
+        "type": "malware",
+        "description": "SLRat appears to have gained popularity since its developer first publicized it in May 2016, advertising it as 'the Best and Free android remote admin tool'",
+        "source": "https://www.lookout.com/threat-intelligence/article/nation-state-mobile-malware-targets-syrians-with-covid-19-lures"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT-C-27",
+    "aliases": [
+      {
+        "name": "Goldmouse",
+        "source": "Qihoo 360"
+      },
+      {
+        "name": "Golden Rat",
+        "source": "Qihoo 360"
+      },
+      {
+        "name": "ATK 80",
+        "source": "Thales"
+      }
+
+    ],
+    "externalIds": [],
+    "tags": ["Syria-linked","Syrian Electronic Army subgroup","cyber espionage","information theft","Middle East targeting","WinRAR exploit","CVE-2018-20250","GoldenRAT","njRAT","remote access tools","Deadeye Jackal","APT-C-27","malware deployment","state-sponsored","regional intelligence operations"],
+    "description": "Goldmouse (APT-C-27), also known as Golden Rat, is a Syria-linked subgroup of the Syrian Electronic Army (SEA) active since 2014. The group conducts cyber espionage and information theft, primarily targeting the Middle East using tools like GoldenRAT, njRAT, and exploiting vulnerabilities such as WinRAR CVE-2018-20250.",
+    "country": "Syria",
+    "status": "active",
+    "parentNames": ["Syrian Electronic Army"],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Subgroup%3A%20Goldmouse%2C%20APT%2DC%2D27",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "njRAT",
+        "software_id": "S0385",
+        "type": "malware",
+        "description": "njRAT is a remote access tool (RAT) that was first observed in 2012. It has been used by threat actors in the Middle East.",
+        "source": "https://attack.mitre.org/software/S0385/"
+      },
+      {
+        "name": "GoldenRAT",
+        "type": "malware",
+        "description": "After analysing the backdoor script, as mentioned earlier, we found that this is a classic backdoor that has been circulating on the network for a long time. Features include getting system information and uploading, setting up scheduled tasks, downloading files, executing shell commands, deleting files, ending processes, traversing file drivers and processes, and more.",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/apk.goldenrat"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Primary Targets: Focused on government, military, and political entities in the Middle East, often linked to groups opposing the Assad regime.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T23:40:00Z"
+      }
+    ]
+  },
+  {
+    "canonicalName": "APT-C-37",
+    "aliases": [
+      {
+        "name": "Pat Bear",
+        "source": "Qihoo 360"
+      },
+      {
+        "name": "Racquet Bear",
+        "source": "CrowdStrike"
+      }
+    ],
+    "externalIds": [],
+    "tags": ["Syria-linked","Syrian Electronic Army subgroup","cyber espionage","information theft","waterholing","mobile malware","DroidJack","H-Worm","njRAT","SpyNote","SSLove","defense targeting","Middle East targeting","surveillance","credential theft","remote access tools","APT-C-37"],
+    "description": "Pat Bear (APT-C-37 / Racquet Bear) is a Syria-linked subgroup of the Syrian Electronic Army active since 2015, conducting targeted espionage and surveillance—often via watering-hole sites and malicious mobile/desktop RATs (DroidJack, H-Worm, njRAT, SpyNote)—with campaigns focused on defense and regional actors including ISIS, Egypt, and Israel.",
+    "country": "Syria",
+    "status": "active",
+    "parentNames": ["Syrian Electronic Army"],
+    "childNames": [],
+    "sources": [
+      {
+        "source": "ETDA Threat Group Cards",
+        "url": "https://apt.etda.or.th/cgi-bin/showcard.cgi?g=Subgroup%3A%20Pat%20Bear%2C%20APT%2DC%2D37",
+        "note": "Primary technical attribution source"
+      }
+    ],
+    "tools": [
+      {
+        "name": "njRAT",
+        "software_id": "S0385",
+        "type": "malware",
+        "description": "njRAT is a remote access tool (RAT) that was first observed in 2012. It has been used by threat actors in the Middle East.",
+        "source": "https://attack.mitre.org/software/S0385/"
+      },
+      {
+        "name": "DroidJack",
+        "software_id": "https://attack.mitre.org/software/S0320/",
+        "type": "malware",
+        "description": "DroidJack is an Android remote access tool that has been observed posing as legitimate applications including the Super Mario Run and Pokemon GO games.",
+        "source": "https://attack.mitre.org/software/S0320/"
+      },
+      {
+        "name": "H-Worm",
+        "type": "malware",
+        "description": "H-worm is a VBS (Visual Basic Script) based RAT written by an individual going by the name Houdini. We believe the author is based in Algeria and has connections to njq8, the author of njw0rm and njRAT/LV through means of a shared or common code base. ",
+        "source": "https://malpedia.caad.fkie.fraunhofer.de/details/win.houdini"
+      }
+    ],
+    "notes": [
+      {
+        "text": "Targeted espionage and surveillance (information theft) rather than financially motivated crime.",
+        "author": "Analyst Lucas Oda",
+        "createdAt": "2025-10-11T23:45:00Z"
       }
     ]
   }
