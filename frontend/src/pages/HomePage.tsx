@@ -21,11 +21,15 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [loadingAll, setLoadingAll] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showAllResults, setShowAllResults] = useState(false);
+
+  const INITIAL_RESULTS_LIMIT = 5;
 
   const handleSearch = async (query: string) => {
     if (!query.trim()) return;
 
     setSearchQuery(query);
+    setShowAllResults(false);
     setLoading(true);
     try {
       const response = await fetch(`/api/threatgroups/search?query=${encodeURIComponent(query)}`);
@@ -64,7 +68,7 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Threat Group Search</h1>
 
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8">
             <SearchBar onSearch={handleSearch} />
           </div>
 
@@ -76,11 +80,15 @@ const HomePage = () => {
           )}
 
           {!loading && threatGroups.length > 0 && (
-            <div className="max-w-4xl mx-auto">
+            <div>
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold">Search Results ({threatGroups.length})</h2>
                 <button
-                  onClick={() => setThreatGroups([])}
+                  onClick={() => {
+                    setThreatGroups([]);
+                    setSearchQuery("");
+                    setShowAllResults(false);
+                  }}
                   className="btn btn-sm btn-ghost"
                   aria-label="Clear search results"
                 >
@@ -88,7 +96,7 @@ const HomePage = () => {
                 </button>
               </div>
               <div className="flex flex-col gap-1.5">
-                {threatGroups.map((group) => (
+                {(showAllResults ? threatGroups : threatGroups.slice(0, INITIAL_RESULTS_LIMIT)).map((group) => (
                   <ThreatGroupCard
                     key={group._id}
                     id={group._id}
@@ -101,6 +109,16 @@ const HomePage = () => {
                   />
                 ))}
               </div>
+              {!showAllResults && threatGroups.length > INITIAL_RESULTS_LIMIT && (
+                <div className="flex justify-center mt-4">
+                  <button
+                    onClick={() => setShowAllResults(true)}
+                    className="btn btn-outline btn-sm"
+                  >
+                    Show {threatGroups.length - INITIAL_RESULTS_LIMIT} more results
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
