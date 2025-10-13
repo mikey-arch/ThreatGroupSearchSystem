@@ -22,6 +22,8 @@ const HomePage = () => {
   const [loadingAll, setLoadingAll] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showAllResults, setShowAllResults] = useState(false);
+  const [sortBy, setSortBy] = useState<"name" | "country">("name");
+  const [filterCountry, setFilterCountry] = useState<string>("");
 
   const INITIAL_RESULTS_LIMIT = 5;
 
@@ -60,6 +62,20 @@ const HomePage = () => {
 
     fetchAllGroups();
   }, []);
+
+  // Get unique countries for filter dropdown
+  const uniqueCountries = Array.from(new Set(allGroups.map(g => g.country).filter(Boolean))).sort();
+
+  // Filter and sort groups
+  const filteredAndSortedGroups = allGroups
+    .filter(group => !filterCountry || group.country === filterCountry)
+    .sort((a, b) => {
+      if (sortBy === "name") {
+        return a.canonicalName.localeCompare(b.canonicalName);
+      } else {
+        return (a.country || "").localeCompare(b.country || "");
+      }
+    });
 
   return (
     <div className="flex">
@@ -123,40 +139,74 @@ const HomePage = () => {
           )}
 
           {/* Full table of groups */}
-          <h2 className="text-2xl font-semibold mt-12 mb-4">Our Database</h2>
+          <div className="flex justify-between items-center mt-12 mb-4">
+            <h2 className="text-2xl font-semibold">Browse Groups</h2>
+            <div className="flex gap-2 items-center">
+              <select
+                className="select select-sm select-bordered"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as "name" | "country")}
+              >
+                <option value="name">Sort by Name</option>
+                <option value="country">Sort by Country</option>
+              </select>
+              <select
+                className="select select-sm select-bordered"
+                value={filterCountry}
+                onChange={(e) => setFilterCountry(e.target.value)}
+              >
+                <option value="">All Countries</option>
+                {uniqueCountries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
 
           {loadingAll ? (
             <div className="flex justify-center">
               <span className="loading loading-spinner loading-lg"></span>
             </div>
           ) : (
-            <div className="overflow-x-auto border rounded-lg">
-              <table className="table w-full">
-                <thead>
-                  <tr className="bg-base-200">
-                    <th>Name</th>
-                    <th>Aliases</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {allGroups.map((group) => (
-                    <tr
-                      key={group._id}
-                      className="hover:bg-base-200 cursor-pointer"
-                      onClick={() => navigate(`/profile/${group._id}`)}
-                    >
-                      <td className="font-medium text-blue-600">{group.canonicalName}</td>
-                      <td>
-                        {group.aliases?.length
-                          ? group.aliases.map((a) => a.name).join(", ")
-                          : "—"}
-                      </td>
-                      <td className="max-w-[500px]">{group.description}</td>
+            <div className="border rounded-lg overflow-hidden">
+              <div className="overflow-x-auto max-h-[1000px] overflow-y-auto">
+                <table className="table w-full">
+                  <thead className="sticky top-0 bg-base-200 z-10">
+                    <tr>
+                      <th>Name</th>
+                      <th>Country</th>
+                      <th>Aliases</th>
+                      <th>Description</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {filteredAndSortedGroups.map((group) => (
+                      <tr
+                        key={group._id}
+                        className="hover:bg-base-200 cursor-pointer"
+                        onClick={() => navigate(`/profile/${group._id}`)}
+                      >
+                        <td className="font-medium text-blue-600">{group.canonicalName}</td>
+                        <td>{group.country || "—"}</td>
+                        <td>
+                          {group.aliases?.length
+                            ? group.aliases.map((a) => a.name).join(", ")
+                            : "—"}
+                        </td>
+                        <td className="max-w-[500px]">{group.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-base-200 px-4 py-2 text-right">
+                <span className="text-xs text-base-content/60">
+                  Total groups: {filteredAndSortedGroups.length}
+                  {filterCountry && ` (filtered from ${allGroups.length})`}
+                </span>
+              </div>
             </div>
           )}
           
