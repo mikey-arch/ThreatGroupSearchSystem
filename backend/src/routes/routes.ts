@@ -8,10 +8,11 @@ router.get("/", getAllThreatGroups);
 router.get("/id/:id", getThreatGroupById);
 router.get("/search", searchThreatGroups);
 
-// NEW: Get unique countries
+//Get list of unique countries
 router.get("/countries", async (req, res) => {
   try {
     const countries = await ThreatGroup.distinct("country");
+    //remove null or empty values
     const filtered = countries.filter(c => c);
     res.json(filtered.map(c => ({ country: c })));
   } catch (err) {
@@ -20,12 +21,12 @@ router.get("/countries", async (req, res) => {
   }
 });
 
-// Get threat groups by country
+//Get all threat groups from a specific country
 router.get("/bycountry/:country", async (req, res) => {
   try {
     const { country } = req.params;
 
-    // Find all threat groups with this country
+    //Find all threat groups with specified country
     const groups = await ThreatGroup.find({ country });
 
     if (groups.length === 0) {
@@ -39,9 +40,8 @@ router.get("/bycountry/:country", async (req, res) => {
   }
 });
 
-
+//Get threat groups by Canonical name 
 router.get("/:canonicalName", getThreatGroupByCanonicalName);
-
 
 export default router;
 

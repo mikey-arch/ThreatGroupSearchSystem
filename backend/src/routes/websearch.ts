@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 
 const router = express.Router();
 
+//Define the expected structure of the SerpAPI response
 interface SerpAPIResponse {
   organic_results?: {
     title: string;
@@ -12,9 +13,11 @@ interface SerpAPIResponse {
   error?: string;
 }
 
+//Handle GET requests to perform a web search via SepAPI
 router.get("/", async (req, res) => {
   const { query } = req.query;
 
+  //Validate search query
   if (!query || typeof query !== "string") {
     return res.status(400).json({ error: "No search query provided" });
   }
@@ -26,21 +29,23 @@ router.get("/", async (req, res) => {
   }
 
   try {
+    //Enhance query and build API request URL
     const enhancedQuery = `${query} APT threat group cyber`;
     const url = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(enhancedQuery)}&api_key=${API_KEY}&num=10`;
     console.log("Fetching SerpAPI:", url.replace(API_KEY, "***API_KEY***"));
 
+    //Fetch results from SerpAPI
     const response = await fetch(url);
     const data = (await response.json()) as SerpAPIResponse;
-
     console.log("SerpAPI Response Status:", response.status);
 
+    //Handle API or network errors
     if (!response.ok || data.error) {
       console.error("SerpAPI Error:", data.error || data);
       return res.status(500).json({ error: data.error || "SerpAPI error" });
     }
 
-    // Convert SerpAPI format to frontend format
+    //Convert SerpAPI format to frontend format
     const items = data.organic_results?.map(result => ({
       title: result.title,
       link: result.link,

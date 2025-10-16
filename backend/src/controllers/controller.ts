@@ -1,5 +1,6 @@
 import ThreatGroup from "../models/ThreatGroup.ts"
 
+//get all threat groups
 export const getAllThreatGroups = async (req, res) => {
     try {
         const groups = await ThreatGroup.find();
@@ -49,6 +50,7 @@ export async function searchThreatGroups(req, res) {
     }
 }
 
+//Get a single threat group by its canonical name
 export async function getThreatGroupByCanonicalName(req, res) {
     try {
         const { canonicalName } = req.params;
@@ -61,6 +63,7 @@ export async function getThreatGroupByCanonicalName(req, res) {
     }
 }
 
+//Get a single threat group by its MongoDB ID
 export async function getThreatGroupById(req, res) {
     try {
         const threatgroup = await ThreatGroup.findById(req.params.id)

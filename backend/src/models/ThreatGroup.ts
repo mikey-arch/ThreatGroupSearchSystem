@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//Define the ThreatGroup schema 
 const threatGroupSchema = new mongoose.Schema(
     {
         canonicalName: {

@@ -8,19 +8,23 @@ import mongoose from 'mongoose';
 
 dotenv.config();
 
+//Setup Express App for testing
 const app = express();
 app.use(express.json());
 app.use('/api/threatgroups', routes);
 
 describe('Threat Group Routes', () => {
+  //Connect to database before tests
   beforeAll(async () => {
     await connectDB();
   });
 
+  //Close database connection after tests
   afterAll(async () => {
     await mongoose.connection.close();
   });
 
+  //Test GET all threat groups
   describe('GET /api/threatgroups', () => {
     it('returns all threat groups', async () => {
       const response = await request(app)
@@ -43,6 +47,7 @@ describe('Threat Group Routes', () => {
     });
   });
 
+  //Test search endpoint
   describe('GET /api/threatgroups/search', () => {
     it('returns search results for canonical name match', async () => {
       const response = await request(app)
@@ -101,9 +106,10 @@ describe('Threat Group Routes', () => {
     });
   });
 
+  //Test GET by ID
   describe('GET /api/threatgroups/id/:id', () => {
     it('returns threat group by valid ID', async () => {
-      // First get a group to get a valid ID
+      //First get a group to get a valid ID
       const allGroups = await request(app).get('/api/threatgroups');
       const validId = allGroups.body[0]._id;
 
@@ -116,7 +122,8 @@ describe('Threat Group Routes', () => {
     });
 
     it('returns 404 for non-existent ID', async () => {
-      const fakeId = '507f1f77bcf86cd799439011'; // Valid MongoDB ObjectId format
+      //Valid MongoDB ObjectId format
+      const fakeId = '507f1f77bcf86cd799439011'; 
       const response = await request(app)
         .get(`/api/threatgroups/id/${fakeId}`)
         .expect(404);
@@ -135,6 +142,7 @@ describe('Threat Group Routes', () => {
     });
   });
 
+  //Test GET by canonical name
   describe('GET /api/threatgroups/:canonicalName', () => {
     it('returns threat group by canonical name', async () => {
       const response = await request(app)
