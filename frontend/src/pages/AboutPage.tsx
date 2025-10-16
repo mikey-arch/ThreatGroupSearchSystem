@@ -1,21 +1,3 @@
-// import Sidebar from "../components/Sidebar";
-
-// const AboutPage = () => {
-//   return (
-//     <div className="flex">
-//       <Sidebar />
-//       <main>
-//         <div>
-//           <h1>About CROW</h1>
-//         </div>
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default AboutPage;
-
-
 import crowData from "../data/crow.json";
 import Sidebar from "../components/Sidebar";
 
@@ -51,7 +33,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Focus Areas */}
+        {/* Research Focus Areas */}
         {crowData.focusAreas && crowData.focusAreas.length > 0 && (
           <section className="mb-8 bg-white dark:bg-base-100 rounded-lg p-6 shadow">
             <h2 className="text-2xl font-semibold mb-4">Research Focus Areas</h2>
@@ -63,7 +45,7 @@ const AboutPage = () => {
           </section>
         )}
 
-        {/* Optional: Note */}
+        {/* Note */}
         <section className="mb-8 text-sm text-gray-500">
           <p>
             For the most up-to-date information about the team, research projects,

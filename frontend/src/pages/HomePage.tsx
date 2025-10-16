@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import Sidebar from "../components/Sidebar";
 import ThreatGroupCard from "../components/ThreatGroupCard";
 
-
+//Type definition for threat groups
 interface ThreatGroup {
   _id: string;
   canonicalName: string;
@@ -16,6 +16,8 @@ interface ThreatGroup {
 
 const HomePage = () => {
   const navigate = useNavigate();
+
+  //State for search results, full group list, loading, filters, sorting etc
   const [threatGroups, setThreatGroups] = useState<ThreatGroup[]>([]);
   const [allGroups, setAllGroups] = useState<ThreatGroup[]>([]);
   const [loading, setLoading] = useState(false);
@@ -27,6 +29,7 @@ const HomePage = () => {
 
   const INITIAL_RESULTS_LIMIT = 5;
 
+  //Search handler
   const handleSearch = async (query: string) => {
     if (!query.trim()) return;
 
@@ -45,7 +48,7 @@ const HomePage = () => {
     }
   };
 
-  // Fetch all groups on mount for the table
+  //Fetch all groups on mount for the table
   useEffect(() => {
     const fetchAllGroups = async () => {
       setLoadingAll(true);
@@ -63,10 +66,10 @@ const HomePage = () => {
     fetchAllGroups();
   }, []);
 
-  // Get unique countries for filter dropdown
+  //Get unique countries for filter dropdown
   const uniqueCountries = Array.from(new Set(allGroups.map(g => g.country).filter(Boolean))).sort();
 
-  // Filter and sort groups
+  //Filter and sort groups
   const filteredAndSortedGroups = allGroups
     .filter(group => !filterCountry || group.country === filterCountry)
     .sort((a, b) => {
@@ -84,6 +87,7 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Threat Group Search</h1>
 
+          {/* Search input */}
           <div className="mb-8">
             <SearchBar onSearch={handleSearch} />
           </div>
@@ -150,6 +154,8 @@ const HomePage = () => {
                 <option value="name">Sort by Name</option>
                 <option value="country">Sort by Country</option>
               </select>
+
+              {/**Country filter dropdown */}
               <select
                 className="select select-sm select-bordered"
                 value={filterCountry}

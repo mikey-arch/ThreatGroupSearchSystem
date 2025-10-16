@@ -19,9 +19,11 @@ interface Props {
 const GraphTree: React.FC<Props> = ({ canonicalName, parents, children }) => {
   const navigate = useNavigate();
 
+  //Handle clicking on a node to navigate to its profile
   const handleNodeClick = useCallback(
     async (_event: React.MouseEvent, node: Node) => {
       const groupName = node.data.label as string;
+      //Dont navigate to self
       if (groupName === canonicalName) return;
 
       try {
@@ -37,12 +39,13 @@ const GraphTree: React.FC<Props> = ({ canonicalName, parents, children }) => {
     [navigate, canonicalName]
   );
 
-  // Helpers to spread nodes horizontally
+  //Helpers to spread nodes horizontally
   const horizontalSpacing = 200;
   const verticalSpacing = 150;
 
   const centerX = 0;
 
+  //Create parent nodes positioned above main
   const parentNodes: Node[] = parents.map((parent, i) => ({
     id: `parent-${i}`,
     position: {
@@ -58,6 +61,7 @@ const GraphTree: React.FC<Props> = ({ canonicalName, parents, children }) => {
     },
   }));
 
+  //Create children nodes positioned below main
   const childNodes: Node[] = children.map((child, i) => ({
     id: `child-${i}`,
     position: {
@@ -73,6 +77,7 @@ const GraphTree: React.FC<Props> = ({ canonicalName, parents, children }) => {
     },
   }));
 
+  //Main node in the center
   const nodes: Node[] = [
     ...parentNodes,
     {
@@ -89,6 +94,7 @@ const GraphTree: React.FC<Props> = ({ canonicalName, parents, children }) => {
     ...childNodes,
   ];
 
+  //Connect edges from parents to main and main to children
   const edges: Edge[] = [
     ...parents.map((_, i) => ({
       id: `e-parent-${i}`,

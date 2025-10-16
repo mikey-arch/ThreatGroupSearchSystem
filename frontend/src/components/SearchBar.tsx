@@ -8,12 +8,14 @@ const SearchBar = ({ onSearch, placeholder = "Search by name, alias, or country.
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const query = formData.get('search') as string;
+    //Call parent callback with query
     onSearch(query);
   };
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className="relative">
+        {/**Search icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -28,6 +30,7 @@ const SearchBar = ({ onSearch, placeholder = "Search by name, alias, or country.
             d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
           />
         </svg>
+        {/**Search input */}
         <input
           type="text"
           name="search"

@@ -8,9 +8,9 @@ import Sidebar from "../components/Sidebar";
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import shadowUrl from "leaflet/dist/images/marker-shadow.png";
-import countryCoords from "../data/countries.json"; // adjust path as needed
+import countryCoords from "../data/countries.json"; 
 
-// Fix default icon for Leaflet in React
+//Fix default icon for Leaflet in React
 L.Icon.Default.mergeOptions({
   iconUrl,
   iconRetinaUrl,
@@ -24,6 +24,7 @@ interface CountryFromAPI {
 const MapLeaflet = () => {
   const [threatCountries, setThreatCountries] = useState<string[]>([]);
 
+  //Fetch countries with threat groups
   useEffect(() => {
     const fetchCountries = async () => {
       try {
@@ -59,7 +60,7 @@ const MapLeaflet = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution="&copy; OpenStreetMap contributors"
             />
-
+            {/**Render threat group markers */}
             {threatCountries
               .filter(country => country !== "Unknown")
               .map((country) => {

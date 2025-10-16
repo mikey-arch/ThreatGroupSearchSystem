@@ -25,6 +25,7 @@ interface ThreatGroup {
 }
 
 const ProfilePage = () => {
+  //State setup
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
@@ -36,7 +37,7 @@ const ProfilePage = () => {
   const [webResults, setWebResults] = useState<WebResult[]>([]);
   const [webLoading, setWebLoading] = useState(false);
 
-  // Fetch threat group by ID
+  //Fetch threat group by ID
   useEffect(() => {
     if (!id) return;
 
@@ -56,7 +57,7 @@ const ProfilePage = () => {
     fetchData();
   }, [id]);
 
-  // Navigate to another threat group by canonicalName
+  //Navigate to another threat group by canonicalName
   const navigateToGroup = async (canonicalName: string) => {
     try {
       const res = await fetch(`/api/threatgroups/${encodeURIComponent(canonicalName)}`);
@@ -67,7 +68,7 @@ const ProfilePage = () => {
     }
   };
 
-  // Fetch web results for current group + parents + children
+  //Fetch web results for current group + parents + children
   const fetchWebResults = async () => {
     if (!group) return;
     setWebLoading(true);
@@ -81,7 +82,9 @@ const ProfilePage = () => {
     try {
       const res = await fetch("/api/websearch?query=" + encodeURIComponent(terms.join(" ")));
       const data = await res.json();
-      setWebResults(data.items || []); // items comes from Google Custom Search API
+      
+      //items comes from SerpAPI
+      setWebResults(data.items || []); 
     } catch (err) {
       console.error("Failed to fetch web results", err);
       setWebResults([]);
@@ -90,6 +93,7 @@ const ProfilePage = () => {
     }
   };
 
+  //Handle tab switching
   const handleTabClick = (tab: "profile" | "web") => {
     setActiveTab(tab);
     if (tab === "web" && webResults.length === 0) {
@@ -97,6 +101,7 @@ const ProfilePage = () => {
     }
   };
 
+  //Loading and error states
   if (loading) return <div>Loading...</div>;
   if (!group) return <div>No threat group found.</div>;
 
@@ -131,8 +136,10 @@ const ProfilePage = () => {
         {/* Profile Tab */}
         {activeTab === "profile" && (
           <>
+            {/**Description */}
             {group.description && <section className="mb-6"><h2 className="text-xl font-semibold mb-2">Description</h2><p>{group.description}</p></section>}
 
+            {/**Aliases */}
             {group.aliases && group.aliases.length > 0 && (
               <section className="mb-6">
                 <h2 className="text-xl font-semibold mb-2">Aliases</h2>
@@ -142,6 +149,7 @@ const ProfilePage = () => {
               </section>
             )}
 
+            {/**Affiliated country */}
             {(group.country || group.status) && (
               <section className="mb-6">
                 {group.country && <p><strong>Country:</strong> {group.country}</p>}
@@ -149,6 +157,7 @@ const ProfilePage = () => {
               </section>
             )}
 
+            {/**Tags */}
             {group.tags && group.tags.length > 0 && (
               <section className="mb-6">
                 <h2 className="text-xl font-semibold mb-2">Tags</h2>
@@ -160,6 +169,7 @@ const ProfilePage = () => {
               </section>
             )}
 
+            {/**Chilren and Parent groups: */}
             {(group.parentNames?.length ?? 0) > 0 || (group.childNames?.length ?? 0) > 0 ? (
             <section className="mb-6 bg-white rounded-lg p-6 shadow">
               <GraphTree
@@ -168,6 +178,7 @@ const ProfilePage = () => {
                 children={group.childNames || []}
               />
 
+              {/**Parent groups */}
               {group.parentNames && group.parentNames.length > 0 && (
                 <>
                   <h2 className="text-xl font-semibold mt-6 mb-2">Parent Groups</h2>
@@ -186,6 +197,7 @@ const ProfilePage = () => {
                 </>
               )}
 
+              {/**Children groups */}
               {group.childNames && group.childNames.length > 0 && (
                 <>
                   <h2 className="text-xl font-semibold mt-6 mb-2">Child Groups</h2>
@@ -206,7 +218,7 @@ const ProfilePage = () => {
             </section>
           ) : null}
 
-
+          {/**Tools */}
           {group.tools && group.tools.length > 0 && (
             <section className="mb-6 bg-white rounded-lg p-6 shadow">
               <h2 className="text-2xl font-semibold mb-4">Tools</h2>
@@ -222,7 +234,7 @@ const ProfilePage = () => {
             </section>
           )}
           
-
+          {/**Notes */}
           {group.notes && group.notes.length > 0 && (
             <section className="mb-6 bg-white dark:bg-base-100 rounded-lg p-6 shadow">
               <h2 className="text-2xl font-semibold mb-4">Notes</h2>

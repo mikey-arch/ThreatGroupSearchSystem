@@ -30,6 +30,7 @@ const CountryThreats = () => {
   const [threatGroups, setThreatGroups] = useState<ThreatGroup[]>([]);
   const [loading, setLoading] = useState(true);
 
+  //fetch threat groups for the specified country
   useEffect(() => {
     if (!country) return;
     const fetchThreats = async () => {
@@ -46,16 +47,19 @@ const CountryThreats = () => {
     fetchThreats();
   }, [country]);
 
+  //Navigate to a group's profile page
   const navigateToGroup = (groupId: string) => {
     navigate(`/profile/${groupId}`);
-}
-
+  }
 
   return (
     <div className="flex">
+      {/**Sidebar */}
       <div className="sticky top-0 h-screen">
         <Sidebar />
       </div>
+
+      {/**Main Content */}
       <main className="flex-1 p-8 max-w-6xl mx-auto" data-theme="nord">
         <div className="sticky top-0 z-20 bg-base-200 py-6 shadow-md">
           <h1 className="text-4xl font-bold text-center">Threat Groups in {country}</h1>
@@ -73,12 +77,14 @@ const CountryThreats = () => {
                   {group.canonicalName}
                 </h2>
 
+                {/**Status badge */}
                 {group.status && (
                   <span className={`ml-2 px-2 py-1 rounded-full text-sm font-semibold ${group.status === "active" ? "bg-green-200 text-green-800" : "bg-gray-200 text-gray-800"}`}>
                     {group.status.toUpperCase()}
                   </span>
                 )}
 
+                {/**Tags */}
                 {group.tags && (
                   <div className="mt-2 space-x-2">
                     {group.tags.map(tag => (
@@ -88,29 +94,36 @@ const CountryThreats = () => {
                     ))}
                   </div>
                 )}
-
+                {/**Description */}
                 {group.description && <p className="mt-4">{group.description}</p>}
 
+                {/**Following are optional dependent on information available per group */}
+                {/**Alisases */}
                 {group.aliases && group.aliases.length > 0 && (
                   <p className="mt-2"><strong>Aliases:</strong> {group.aliases.map(a => a.name).join(", ")}</p>
                 )}
 
+                {/**Tools */}
                 {group.tools && group.tools.length > 0 && (
                   <p className="mt-1"><strong>Tools:</strong> {group.tools.map(t => t.name).join(", ")}</p>
                 )}
 
+                {/**Sources */}
                 {group.sources && group.sources.length > 0 && (
                   <p className="mt-1"><strong>Sources:</strong> {group.sources.map(s => s.source).join(", ")}</p>
                 )}
 
+                {/**Notes */}
                 {group.notes && group.notes.length > 0 && (
                   <p className="mt-1"><strong>Notes:</strong> {group.notes.map(n => n.text).join(" | ")}</p>
                 )}
 
+                {/**Parent groups */}
                 {group.parentNames && group.parentNames.length > 0 && (
                   <p className="mt-1"><strong>Parent Groups:</strong> {group.parentNames.join(", ")}</p>
                 )}
 
+                {/**Children groups */}
                 {group.childNames && group.childNames.length > 0 && (
                   <p className="mt-1"><strong>Child Groups:</strong> {group.childNames.join(", ")}</p>
                 )}

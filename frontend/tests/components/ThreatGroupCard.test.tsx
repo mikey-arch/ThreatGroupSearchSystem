@@ -22,18 +22,21 @@ describe('ThreatGroupCard Component', () => {
     searchQuery: ''
   };
 
+  //test that the threat group title is rendered
   it('renders threat group title', () => {
     renderWithRouter(<ThreatGroupCard {...mockGroup} />);
 
     expect(screen.getByText(/Lazarus Group/)).toBeDefined();
   });
 
+  //Test that the description/context is rendered
   it('renders description', () => {
     renderWithRouter(<ThreatGroupCard {...mockGroup} />);
 
     expect(screen.getByText('North Korean state-sponsored group')).toBeDefined();
   });
 
+  //Test that the correct country flag emoji is displayed
   it('displays country flag for North Korea', () => {
     renderWithRouter(<ThreatGroupCard {...mockGroup} />);
 
@@ -42,6 +45,7 @@ describe('ThreatGroupCard Component', () => {
     expect(card?.textContent).toContain('🇰🇵');
   });
 
+  //Test that aliases are displayed and seperated by commas
   it('displays all aliases comma-separated', () => {
     renderWithRouter(<ThreatGroupCard {...mockGroup} />);
 
@@ -49,6 +53,7 @@ describe('ThreatGroupCard Component', () => {
     expect(screen.getByText(/HIDDEN COBRA, ZINC/)).toBeDefined();
   });
 
+  //Test that the first 3 tags are rendered
   it('displays first 3 tags', () => {
     renderWithRouter(<ThreatGroupCard {...mockGroup} />);
 
@@ -57,6 +62,7 @@ describe('ThreatGroupCard Component', () => {
     expect(screen.getByText('financial crime')).toBeDefined();
   });
 
+  //Test that additional tags are collapsed into a "+count" badge
   it('shows +count badge when more than 3 tags', () => {
     const groupWithManyTags = {
       ...mockGroup,
@@ -68,6 +74,7 @@ describe('ThreatGroupCard Component', () => {
     expect(screen.getByText('+2')).toBeDefined();
   });
 
+  //Test that the card rendered as a link to the profile page
   it('renders as a link to profile page', () => {
     renderWithRouter(<ThreatGroupCard {...mockGroup} />);
 
@@ -75,6 +82,7 @@ describe('ThreatGroupCard Component', () => {
     expect(link?.getAttribute('href')).toBe('/profile/123');
   });
 
+  //Test handling of missing optional fields (aliases, tags, country)
   it('handles missing optional fields gracefully', () => {
     const minimalGroup = {
       id: '456',
@@ -88,6 +96,7 @@ describe('ThreatGroupCard Component', () => {
     expect(screen.getByText('Test description')).toBeDefined();
   });
 
+  //Test that the default flag is shown when country is "Unknown"
   it('shows default flag when country is unknown', () => {
     const groupNoCountry = { ...mockGroup, country: 'Unknown' };
     renderWithRouter(<ThreatGroupCard {...groupNoCountry} />);
